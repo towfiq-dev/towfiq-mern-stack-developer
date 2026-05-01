@@ -13,7 +13,6 @@ const navLinks = [
   { name: 'Skills', href: '/navLinks/skills', icon: <Code2 size={16} /> },
   { name: 'Projects', href: '/navLinks/projects', icon: <Briefcase size={16} /> },
   { name: 'Certificates', href: '/navLinks/certificates', icon: <Award size={16} /> },
-  { name: 'Testimonials', href: '/navLinks/testimonials', icon: <MessageSquare size={16} /> },
   { name: 'Contact', href: '/navLinks/contact', icon: <Mail size={16} /> },
 ];
 
