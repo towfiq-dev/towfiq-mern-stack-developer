@@ -7,12 +7,14 @@ import ProjectSection from '@/components/projectSection/ProjectSection';
 import TechStackHome from '@/components/techStackHome/TechStackHome';
 import Contact from '@/components/contact/Contact';
 import SocialLinks from '@/components/socialLinks/SocialLinks';
+import EducationPage from './navLinks/education/page';
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <SocialLinks/>
+      <EducationPage/>
       <States />
       <ProjectSection />
       <WhatDo />

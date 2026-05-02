@@ -16,12 +16,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "@/assets/logo1.svg";
+import { MdCastForEducation } from "react-icons/md";
 
 const navLinks = [
   { name: "Home", href: "/", icon: <Home size={15} /> },
   { name: "About", href: "/navLinks/about", icon: <User size={15} /> },
   { name: "Skills", href: "/navLinks/skills", icon: <Code2 size={15} /> },
   { name: "Projects", href: "/navLinks/projects", icon: <Briefcase size={15} /> },
+  { name: "Education", href: "/navLinks/education", icon: <MdCastForEducation size={15} /> },
   { name: "Contact", href: "/navLinks/contact", icon: <Mail size={15} /> },
 ];
 
