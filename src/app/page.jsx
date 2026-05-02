@@ -9,12 +9,12 @@ import TechStackHome from '@/components/techStackHome/TechStackHome';
 const Home = () => {
   return (
     <div>
-      <Hero/>
-      <States/>
-      <ProjectSection/>
-      <WhatDo/>
-      <TechStackHome/>
-      <GetTouch/>
+      <Hero />
+      <States />
+      <ProjectSection />
+      <WhatDo />
+      <TechStackHome />
+      <GetTouch />
     </div>
   );
 };

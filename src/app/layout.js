@@ -14,22 +14,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "towfiq-dev",
-  description: "towfiq-dev | Mern Stack Developer",
+  title: "Towfiqul Islam | MERN Stack Developer",
+  description: "Towfiqul Islam - Full Stack MERN Stack Developer specializing in React & Next.js",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en" data-theme="light"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="en"
+      data-theme="dark"
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body>
-        <Navbar/>
-        <main>
-          {children}
-        </main>
-        <Footer/>
+      <body className="bg-black text-white">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

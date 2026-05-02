@@ -1,66 +1,123 @@
-import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import { SiFacebook } from 'react-icons/si';
+import Image from "next/image";
+import Link from "next/link";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { SiFacebook } from "react-icons/si";
+import Logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#020617] text-slate-400 py-12 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
+    <footer className="bg-[#020617] text-slate-400 pt-14 pb-8 border-t border-slate-800/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
           {/* Column 1: Branding */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="bg-sky-500 text-white p-2 rounded-lg font-bold text-xl">T</div>
-              <span className="text-white font-bold text-xl tracking-tight">towfiq-dev</span>
-            </div>
-            <p className="text-sm leading-relaxed">
-              Full Stack Web Developer crafting modern, performant web applications 
-              with clean code and pixel-perfect design.
+          <div className="sm:col-span-2 lg:col-span-1 space-y-5">
+            <Link href="/" className="flex items-center gap-2.5">
+              <Image
+                width={44}
+                height={44}
+                alt="Towfiq Dev"
+                src={Logo}
+                className="rounded-full"
+              />
+              <span className="text-white font-bold text-lg tracking-tight">
+                towfiq-dev
+              </span>
+            </Link>
+            <p className="text-sm leading-relaxed max-w-xs">
+              Full Stack Web Developer crafting modern, performant web
+              applications with clean code and pixel-perfect design.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 bg-slate-800/50 rounded-md hover:text-sky-400 transition-all"><FaGithub size={20} /></a>
-              <a href="#" className="p-2 bg-slate-800/50 rounded-md hover:text-sky-400 transition-all"><FaLinkedin size={20} /></a>
-              <a href="#" className="p-2 bg-slate-800/50 rounded-md hover:text-sky-400 transition-all"><FaTwitter size={20} /></a>
-              <a href="#" className="p-2 bg-slate-800/50 rounded-md hover:text-sky-400 transition-all"><SiFacebook size={20} /></a>
+            <div className="flex gap-3">
+              {[
+                { Icon: FaGithub, link: "https://github.com/towfiq-dev" },
+                { Icon: FaLinkedin, link: "https://www.linkedin.com/in/towfiqul-islam1" },
+                { Icon: FaTwitter, link: "#" },
+                { Icon: SiFacebook, link: "https://www.facebook.com/towfiqul6185" },
+              ].map(({ Icon, link }, i) => (
+                <a
+                  key={i}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 bg-slate-800/50 rounded-lg hover:text-sky-400 hover:bg-slate-800 transition-all"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Quick Links</h4>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/" className="hover:text-sky-400 transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-sky-400 transition-colors">About</Link></li>
-              <li><Link href="/skills" className="hover:text-sky-400 transition-colors">Skills</Link></li>
-              <li><Link href="/projects" className="hover:text-sky-400 transition-colors">Projects</Link></li>
+            <h4 className="text-white font-semibold mb-5 uppercase tracking-wider text-xs">
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/navLinks/about" },
+                { label: "Skills", href: "/navLinks/skills" },
+                { label: "Projects", href: "/navLinks/projects" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="hover:text-sky-400 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Column 3: More */}
           <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs">More</h4>
-            <ul className="space-y-4 text-sm">
-              <li><Link href="/certificates" className="hover:text-sky-400 transition-colors">Certificates</Link></li>
-              <li><Link href="/testimonials" className="hover:text-sky-400 transition-colors">Testimonials</Link></li>
-              <li><Link href="/contact" className="hover:text-sky-400 transition-colors">Contact</Link></li>
+            <h4 className="text-white font-semibold mb-5 uppercase tracking-wider text-xs">
+              More
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "Certificates", href: "/navLinks/certificates" },
+                { label: "Testimonials", href: "/navLinks/testimonials" },
+                { label: "Contact", href: "/navLinks/contact" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="hover:text-sky-400 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: Get In Touch */}
+          {/* Column 4: Contact Info */}
           <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Get In Touch</h4>
+            <h4 className="text-white font-semibold mb-5 uppercase tracking-wider text-xs">
+              Get In Touch
+            </h4>
             <ul className="space-y-4 text-sm">
-              <li className="flex items-center gap-3">
-                <FaEnvelope className="text-sky-500" />
-                <span>towfiqulislam017399@gmail.com</span>
+              <li className="flex items-start gap-3">
+                <FaEnvelope className="text-sky-500 mt-0.5 flex-shrink-0" />
+                <span className="break-all">towfiqulislam017399@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhoneAlt className="text-sky-500" />
+                <FaPhoneAlt className="text-sky-500 flex-shrink-0" />
                 <span>+8801739943577</span>
               </li>
               <li className="flex items-center gap-3">
-                <FaMapMarkerAlt className="text-sky-500" />
+                <FaMapMarkerAlt className="text-sky-500 flex-shrink-0" />
                 <span>Dhaka, Bangladesh</span>
               </li>
             </ul>
@@ -68,9 +125,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px]">
-          <p>© {new Date().getFullYear()} Towfiqul Islam. All rights reserved.</p>
-          <p>Designed & Built by <span className="text-sky-500">Towfiqul Islam</span></p>
+        <div className="pt-8 border-t border-slate-800/50 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-sm">
+          <p>
+            © {new Date().getFullYear()} Towfiqul Islam. All rights reserved.
+          </p>
+          <p>
+            Designed & Built by{" "}
+            <span className="text-sky-500">Towfiqul Islam</span>
+          </p>
         </div>
       </div>
     </footer>
