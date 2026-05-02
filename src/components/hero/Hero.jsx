@@ -9,7 +9,7 @@ export default function Hero() {
   const profileImageUrl = "/path/to/your/profile-image.png"; // Place your image in the public folder
 
   return (
-    <section className="bg-neutral-950 text-white min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex items-center">
+    <section className="bg-[#050505] text-white min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex items-center">
       <div className="max-w-280 mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Side (Text Content) - Starts with Available for Freelance */}

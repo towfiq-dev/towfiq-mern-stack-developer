@@ -12,7 +12,7 @@ const navLinks = [
   { name: 'About', href: '/navLinks/about', icon: <User size={16} /> },
   { name: 'Skills', href: '/navLinks/skills', icon: <Code2 size={16} /> },
   { name: 'Projects', href: '/navLinks/projects', icon: <Briefcase size={16} /> },
-  { name: 'Certificates', href: '/navLinks/certificates', icon: <Award size={16} /> },
+  // { name: 'Certificates', href: '/navLinks/certificates', icon: <Award size={16} /> },
   { name: 'Contact', href: '/navLinks/contact', icon: <Mail size={16} /> },
 ];
 
@@ -30,7 +30,7 @@ const Navbar = () => {
             T
           </div>
           <span className="text-white font-bold text-xl hidden sm:block">
-            Tanim<span className="text-gray-400 text-lg">.dev</span>
+            Towfiq<span className="text-gray-400 text-lg">.dev</span>
           </span>
         </Link>
 
