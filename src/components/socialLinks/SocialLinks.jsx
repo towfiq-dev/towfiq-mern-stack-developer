@@ -10,7 +10,7 @@ const SocialLinks = () => {
   ];
 
   return (
-    <div className="flex items-center -mt-10 mb-11 gap-4 p-6 bg-[#050505]">
+    <div className="flex items-center mb-11 gap-4 p-6 bg-[#050505]">
       {socials.map((social) => (
         <Link
           key={social.id}
