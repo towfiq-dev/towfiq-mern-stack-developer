@@ -46,7 +46,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-[#050505] text-white min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8 flex items-center">
+    <section className="bg-[#050505] text-white min-h-screen pt-10 px-4 sm:px-6 lg:px-8 flex items-center">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
         {/* Left: Text Content */}
@@ -155,7 +155,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
+        
       </div>
     </section>
   );

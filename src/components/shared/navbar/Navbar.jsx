@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo1.svg";
 
 const navLinks = [
   { name: "Home", href: "/", icon: <Home size={15} /> },
@@ -43,27 +43,22 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
           ? "bg-black/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20"
           : "bg-black/60 backdrop-blur-sm"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+          <Link href="/">
             <Image
-              width={42}
-              height={42}
+              width={140}
+              height={40}
               alt="Towfiq Dev Logo"
               src={Logo}
-              className="rounded-full"
             />
-            <span className="text-white font-bold text-sm hidden sm:block tracking-wide">
-              towfiq-dev
-            </span>
           </Link>
 
           {/* Desktop Nav - Center */}
@@ -74,11 +69,10 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
-                    isActive
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${isActive
                       ? "bg-white/10 text-white shadow-inner"
                       : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
+                    }`}
                 >
                   {link.icon}
                   {link.name}
@@ -135,11 +129,10 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all ${
-                      isActive
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all ${isActive
                         ? "bg-white/10 text-white"
                         : "text-gray-400 hover:text-white hover:bg-white/5"
-                    }`}
+                      }`}
                   >
                     {link.icon}
                     {link.name}
