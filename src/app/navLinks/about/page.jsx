@@ -24,7 +24,7 @@ const stats = [
 const AboutMe = () => {
   return (
     <section className="bg-black text-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto pt-12 sm:pt-16">
+      <div className="max-w-7xl mx-auto pt-24 sm:pt-28">
 
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">

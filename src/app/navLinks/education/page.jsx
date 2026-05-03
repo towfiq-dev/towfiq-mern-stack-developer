@@ -50,7 +50,7 @@ const educationData = [
     borderColor: "border-emerald-500/30",
     badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
     highlight: "Currently Enrolled",
-    description: "Pursuing B.Sc in Computer Science, currently in the 3rd year with a focus on software engineering and web technologies.",
+    description: "Pursuing B.Sc in Social Work, currently in the 3rd year with a focus on social welfare, community development, and human behavior.",
   },
 ];
 
@@ -73,10 +73,10 @@ const GPABar = ({ gpa, gradient }) => {
 
 const EducationPage = () => {
   return (
-    <section className="bg-black text-white min-h-screen">
+    <section className="bg-black text-white ">
 
       {/* Header */}
-      <div className="relative text-center pt-28 sm:pt-32 pb-12 sm:pb-16 px-4 overflow-hidden">
+      <div className="relative text-center pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 overflow-hidden">
         {/* Background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-cyan-500/10 via-purple-500/5 to-transparent rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -103,7 +103,7 @@ const EducationPage = () => {
       </div>
 
       {/* Timeline */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div className="max-w-305 mx-auto px-4 sm:px-6 lg:px-8 pb-20">
 
         {/* Desktop: Vertical timeline line */}
         <div className="relative">

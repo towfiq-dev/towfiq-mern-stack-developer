@@ -46,11 +46,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-[#050505] text-white min-h-screen pt-26 px-4 sm:px-6 lg:px-8 flex items-center">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section className="bg-[#050505] text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 lg:pt-10 lg:pb-0">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
         {/* Left: Text Content */}
-        <div className="space-y-5 order-2 lg:order-1 text-center lg:text-left">
+        <div className="space-y-4 sm:space-y-5 order-2 lg:order-1 text-center lg:text-left">
 
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2.5 bg-neutral-900 border border-neutral-700 rounded-full px-4 py-2 text-sm text-neutral-300">
@@ -68,7 +68,7 @@ export default function Hero() {
           </h1>
 
           {/* Typing Animation */}
-          <div className="flex items-center justify-center lg:justify-start gap-1 h-10 sm:h-12">
+          <div className="flex items-center justify-center lg:justify-start gap-1 h-9 sm:h-11">
             <span
               ref={typingRef}
               className="text-xl sm:text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
@@ -82,7 +82,7 @@ export default function Hero() {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2 pb-2">
             <Link
               href="/navLinks/projects"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full text-base hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-cyan-500/20"
@@ -116,27 +116,27 @@ export default function Hero() {
         </div>
 
         {/* Right: Profile Image */}
-        <div className="relative flex justify-center items-center order-1 lg:order-2">
+        <div className="relative flex justify-center items-center order-1 lg:order-2 pt-8 lg:pt-0">
           {/* Radial glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-cyan-900/10 rounded-full blur-3xl scale-110 pointer-events-none"></div>
 
           {/* Profile Circle */}
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full border-4 border-neutral-800 bg-neutral-900 overflow-hidden shadow-2xl z-10">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-neutral-800 bg-neutral-900 overflow-hidden shadow-2xl z-10">
             <Image
               src={profileImageUrl}
               alt="Towfiqul Islam - Portfolio Profile Picture"
               fill
-              sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+              sizes="(max-width: 640px) 224px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
               style={{ objectFit: "cover" }}
               className="z-10"
               priority
             />
           </div>
 
-          {/* Floating Card: Experience - Top Right */}
-          <div className="absolute top-2 right-0 sm:-right-4 bg-neutral-900 border border-neutral-800 px-4 py-2.5 rounded-2xl shadow-xl z-20 flex gap-3 items-center animate-float">
-            <div className="p-2 rounded-lg bg-cyan-900/40">
-              <Briefcase size={18} className="stroke-cyan-400" />
+          {/* Floating Card: Experience */}
+          <div className="absolute top-4 right-2 sm:right-0 lg:-right-4 bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float">
+            <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-900/40">
+              <Briefcase size={16} className="stroke-cyan-400" />
             </div>
             <div>
               <p className="text-xs font-bold text-white leading-none">1+ Years</p>
@@ -144,10 +144,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Floating Card: Projects - Bottom Left */}
-          <div className="absolute bottom-2 left-0 sm:-left-4 bg-neutral-900 border border-neutral-800 px-4 py-2.5 rounded-2xl shadow-xl z-20 flex gap-3 items-center animate-float [animation-delay:1.2s]">
-            <div className="p-2 rounded-lg bg-purple-900/40">
-              <span className="text-lg font-bold text-purple-400 leading-none">✓</span>
+          {/* Floating Card: Projects */}
+          <div className="absolute bottom-4 left-2 sm:left-0 lg:-left-4 bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
+            <div className="p-1.5 sm:p-2 rounded-lg bg-purple-900/40">
+              <span className="text-base font-bold text-purple-400 leading-none">✓</span>
             </div>
             <div>
               <p className="text-xs font-bold text-white leading-none">20+ Projects</p>
@@ -155,7 +155,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        
+
       </div>
     </section>
   );

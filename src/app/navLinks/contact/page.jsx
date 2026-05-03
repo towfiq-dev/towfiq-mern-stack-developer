@@ -54,7 +54,7 @@ const ContactSection = () => {
   return (
     <section className="bg-black text-white min-h-screen">
       {/* Header */}
-      <div className="text-center pt-28 sm:pt-32 md:pt-36 pb-10 sm:pb-14 px-4">
+      <div className="text-center pt-24 sm:pt-28 pb-10 sm:pb-14 px-4">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-3">
           Get In Touch
         </h2>

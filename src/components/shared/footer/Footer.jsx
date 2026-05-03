@@ -9,7 +9,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { SiFacebook } from "react-icons/si";
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo1.svg";
 
 const Footer = () => {
   return (
@@ -21,15 +21,11 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-2.5">
               <Image
-                width={44}
-                height={44}
-                alt="Towfiq Dev"
-                src={Logo}
-                className="rounded-full"
-              />
-              <span className="text-white font-bold text-lg tracking-tight">
-                towfiq-dev
-              </span>
+              width={140}
+              height={40}
+              alt="Towfiq Dev Logo"
+              src={Logo}
+            />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
               Full Stack Web Developer crafting modern, performant web
@@ -87,7 +83,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "Certificates", href: "/navLinks/certificates" },
-                { label: "Testimonials", href: "/navLinks/testimonials" },
+                { label: "Education", href: "/navLinks/education" },
                 { label: "Contact", href: "/navLinks/contact" },
               ].map(({ label, href }) => (
                 <li key={label}>

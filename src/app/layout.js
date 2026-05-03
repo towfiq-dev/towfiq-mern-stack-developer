@@ -18,6 +18,12 @@ export const metadata = {
   description: "Towfiqul Islam - Full Stack MERN Stack Developer specializing in React & Next.js",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -25,7 +31,7 @@ export default function RootLayout({ children }) {
       data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="bg-black text-white">
+      <body className="bg-black text-white overflow-x-hidden">
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -44,28 +44,18 @@ const allProjects = [
     image: dgToolsImg,
     liveLink: "https://digitoolls-platfrom.netlify.app",
   },
-  {
+    {
     id: 4,
-    title: "Payoo MFS Application",
+    title: "The Dragon News",
     description:
-      "Payoo is a simplified Mobile Financial Service (MFS) web application that allows users to manage their digital wallet. It features secure login, add money, cash out, money transfer, and a detailed transaction history.",
-    tags: ["HTML", "CSS", "JS", "TailwindCSS"],
-    category: "Frontend / Vanilla JS",
-    image: payooImg,
-    liveLink: "https://your-payoo-link.netlify.app",
+      "The Dragon News is a high-performance full-stack news portal built with Next.js and MongoDB. It features a dynamic news feed with category-based filtering, secure user authentication using Better-Auth, and a fully responsive dashboard.",
+    tags: ["Next.js", "MongoDB", "Better-Auth", "TailwindCSS"],
+    category: "Full Stack",
+    image: dragonNewsImg,
+    liveLink: "https://the-dragon-news-pro.vercel.app",
   },
-  {
+    {
     id: 5,
-    title: "English Is Easy!!",
-    description:
-      "English Is Easy is an interactive language learning platform designed to simplify English vocabulary for learners. The application features a clean, categorized layout where users can explore words, view meanings, and practice through interactive UI components.",
-    tags: ["JS", "TailwindCSS", "DOM Manipulation"],
-    category: "Educational",
-    image: englishIsEasyImg,
-    liveLink: "https://english-is-easy-example.netlify.app",
-  },
-  {
-    id: 6,
     title: "AppStore – Productivity Hub",
     description:
       "This project is a comprehensive application marketplace and management system. It features a trending apps showcase, an 'All Applications' grid with filtering capabilities, user-installed app tracking, and detailed review/rating analytics.",
@@ -75,15 +65,26 @@ const allProjects = [
     liveLink: "https://your-app-link.vercel.app",
   },
   {
-    id: 7,
-    title: "The Dragon News",
+    id: 6,
+    title: "Payoo MFS Application",
     description:
-      "The Dragon News is a high-performance full-stack news portal built with Next.js and MongoDB. It features a dynamic news feed with category-based filtering, secure user authentication using Better-Auth, and a fully responsive dashboard.",
-    tags: ["Next.js", "MongoDB", "Better-Auth", "TailwindCSS"],
-    category: "Full Stack",
-    image: dragonNewsImg,
-    liveLink: "https://the-dragon-news-pro.vercel.app",
+      "Payoo is a simplified Mobile Financial Service (MFS) web application that allows users to manage their digital wallet. It features secure login, add money, cash out, money transfer, and a detailed transaction history.",
+    tags: ["HTML", "CSS", "JS", "TailwindCSS"],
+    category: "Frontend / Vanilla JS",
+    image: payooImg,
+    liveLink: "https://your-payoo-link.netlify.app",
   },
+  {
+    id: 7,
+    title: "English Is Easy!!",
+    description:
+      "English Is Easy is an interactive language learning platform designed to simplify English vocabulary for learners. The application features a clean, categorized layout where users can explore words, view meanings, and practice through interactive UI components.",
+    tags: ["JS", "TailwindCSS", "DOM Manipulation"],
+    category: "Educational",
+    image: englishIsEasyImg,
+    liveLink: "https://english-is-easy-example.netlify.app",
+  },
+
   {
     id: 8,
     title: "Book Vibe",
@@ -111,7 +112,7 @@ const ProjectsPage = () => {
 
   return (
     <section className="bg-[#08090a] min-h-screen text-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto pt-24 sm:pt-28">
 
         {/* Header */}
         <motion.div

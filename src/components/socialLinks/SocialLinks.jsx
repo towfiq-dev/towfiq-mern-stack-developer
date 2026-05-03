@@ -10,24 +10,22 @@ const SocialLinks = () => {
   ];
 
   return (
-    <div className="flex items-center mb-11 gap-4 p-6 bg-[#050505]">
+    <div className="flex items-center gap-4 px-4 sm:px-6 lg:px-8 py-6 bg-[#050505] max-w-7xl mx-auto w-full">
       {socials.map((social) => (
         <Link
           key={social.id}
           href={social.url}
           target="_blank"
           aria-label={social.label}
-          className="relative group flex items-center justify-center w-12 h-12 rounded-xl 
-                     bg-white/5 border border-white/10 text-gray-400 
+          className="relative group flex items-center justify-center w-11 h-11 rounded-xl
+                     bg-white/5 border border-white/10 text-gray-400
                      transition-all duration-300 ease-in-out
                      hover:bg-white/10 hover:border-white/20 hover:text-white hover:-translate-y-1
                      backdrop-blur-md shadow-lg overflow-hidden"
         >
-          {/* Hover Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20
                           opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <span className="relative z-10 text-xl">
+          <span className="relative z-10 text-lg">
             {social.icon}
           </span>
         </Link>

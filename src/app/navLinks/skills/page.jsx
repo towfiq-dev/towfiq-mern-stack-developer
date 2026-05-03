@@ -70,7 +70,7 @@ const skillsData = {
 const SkillsSection = () => {
   return (
     <section className="bg-black py-12 sm:py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
-      <div className="max-w-7xl mx-auto pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto pt-24 sm:pt-28">
 
         {/* Title */}
         <div className="text-center mb-16 sm:mb-20">

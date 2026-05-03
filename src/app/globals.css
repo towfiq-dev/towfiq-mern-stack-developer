@@ -45,3 +45,23 @@ html {
   align-items: center;
   min-height: 1.3em;
 }
+
+/* ===========================
+   RESPONSIVE OVERFLOW FIX
+   Prevents horizontal scroll on mobile desktop-mode
+   =========================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ===========================
+   HERO SECTION — no extra top gap
+   =========================== */
+@media (max-width: 1024px) {
+  section[class*="min-h-screen"] {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+}
