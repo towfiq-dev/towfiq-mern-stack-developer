@@ -4,42 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
-import keenKeeperImg from "../../assets/keenkeeper.png";
-import tilesProImg from "../../assets/TilesPro.png";
-import dgToolsImg from "../../assets/DGTools.png";
-
-const projects = [
-  {
-    id: 1,
-    title: "FriendShip Management System",
-    description:
-      "A modern web application designed to help you maintain regular contact with your friends and strengthen your relationships.",
-    tags: ["JS", "React", "TailwindCSS"],
-    category: "Full Stack",
-    image: keenKeeperImg,
-    liveLink: "https://friendship-management.netlify.app",
-  },
-  {
-    id: 2,
-    title: "TilesPro - Online Ceramic Product Gallery",
-    description:
-      "A next-generation web application built to showcase a premium collection of tiles with seamless browsing and profile management.",
-    tags: ["Next.js", "React", "MongoDB", "Better-Auth"],
-    category: "Full Stack",
-    image: tilesProImg,
-    liveLink: "https://tiles-gallery-app.vercel.app",
-  },
-  {
-    id: 3,
-    title: "DigiTools - Premium Digital Tools Marketplace",
-    description:
-      "A high-performance web platform for creators and businesses to explore and manage premium digital assets and AI tools.",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-    category: "Full Stack",
-    image: dgToolsImg,
-    liveLink: "https://digitoolls-platfrom.netlify.app",
-  },
-];
+import { allProjects } from "@/components/allAPI/projectApi/ProjectApi";
 
 const FeaturedProjects = () => {
   return (
@@ -61,7 +26,7 @@ const FeaturedProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project, i) => (
+          {allProjects.slice(0,3).map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +56,7 @@ const FeaturedProjects = () => {
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 line-clamp-2 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-5 flex-grow line-clamp-3">
+                <p className="text-gray-400 text-sm mb-5 flex-grow line-clamp-2">
                   {project.description}
                 </p>
 

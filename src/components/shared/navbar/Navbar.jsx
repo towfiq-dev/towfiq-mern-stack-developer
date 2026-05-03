@@ -16,7 +16,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "@/assets/logo1.svg";
-import { MdCastForEducation } from "react-icons/md";
+import { MdCastForEducation, MdModelTraining } from "react-icons/md";
 
 const navLinks = [
   { name: "Home", href: "/", icon: <Home size={15} /> },
@@ -24,6 +24,7 @@ const navLinks = [
   { name: "Skills", href: "/navLinks/skills", icon: <Code2 size={15} /> },
   { name: "Projects", href: "/navLinks/projects", icon: <Briefcase size={15} /> },
   { name: "Education", href: "/navLinks/education", icon: <MdCastForEducation size={15} /> },
+  { name: "Training", href: "/navLinks/training", icon: <MdModelTraining size={15} /> },
   { name: "Contact", href: "/navLinks/contact", icon: <Mail size={15} /> },
 ];
 
