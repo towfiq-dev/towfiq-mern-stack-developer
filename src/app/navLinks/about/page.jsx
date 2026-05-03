@@ -48,13 +48,13 @@ const AboutMe = () => {
 
           {/* Left: Image */}
           <div className="relative group max-w-sm mx-auto lg:max-w-none w-full">
-            <div className="relative rounded-3xl overflow-hidden border border-gray-800 bg-[#111] z-10">
+            <div className="relative rounded-3xl overflow-hidden border border-gray-800 bg-[#111]  z-10">
               <Image
                 width={600}
                 height={700}
                 src={profileImageUrl}
                 alt="Towfiqul Islam"
-                className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                className="w-full h-auto object-cover  group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
               />
             </div>
 
