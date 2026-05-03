@@ -5,25 +5,50 @@ import {
   FaEnvelope, FaPhoneAlt, FaMapMarkerAlt,
 } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
+import { CheckCircle, AlertCircle } from "lucide-react";
+
+const EMAILJS_SERVICE_ID = "service_zep6yt9";     // ← আপনার Service ID
+const EMAILJS_TEMPLATE_ID = "template_pcwnjcw";   // ← আপনার Template ID
+const EMAILJS_PUBLIC_KEY = "1cTcoGJCCmhnPjFz2";      // ← আপনার Public Key
+
+const INITIAL_FORM = { name: "", email: "", subject: "", message: "" };
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [sending, setSending] = useState(false);
+  const [formData, setFormData] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSending(true);
-    // Add your form submission logic here
-    setTimeout(() => setSending(false), 2000);
+    setStatus("sending");
+
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "towfiqulislam017399@gmail.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus("success");
+      setFormData(INITIAL_FORM); // ফর্ম রিসেট
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
@@ -56,10 +81,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-0.5">Email</p>
-                    <a
-                      href="mailto:towfiqulislam017399@gmail.com"
-                      className="text-gray-200 font-medium text-sm break-all hover:text-cyan-400 transition-colors"
-                    >
+                    <a href="mailto:towfiqulislam017399@gmail.com"
+                      className="text-gray-200 font-medium text-sm break-all hover:text-cyan-400 transition-colors">
                       towfiqulislam017399@gmail.com
                     </a>
                   </div>
@@ -89,9 +112,7 @@ const ContactSection = () => {
 
             {/* Social Icons */}
             <div className="mt-10 pt-8 border-t border-gray-800">
-              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-4">
-                Follow Me
-              </p>
+              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-4">Follow Me</p>
               <div className="flex gap-2.5">
                 {[
                   { Icon: FaGithub, link: "https://github.com/towfiq-dev", label: "GitHub" },
@@ -99,14 +120,8 @@ const ContactSection = () => {
                   { Icon: FaTwitter, link: "#", label: "Twitter" },
                   { Icon: FaFacebookF, link: "https://www.facebook.com/towfiqul6185", label: "Facebook" },
                 ].map(({ Icon, link, label }, idx) => (
-                  <a
-                    key={idx}
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="p-3 bg-[#1a1a1a] rounded-xl hover:bg-gray-800 transition-all text-gray-400 hover:text-white border border-transparent hover:border-gray-700"
-                  >
+                  <a key={idx} href={link} target="_blank" rel="noopener noreferrer" aria-label={label}
+                    className="p-3 bg-[#1a1a1a] rounded-xl hover:bg-gray-800 transition-all text-gray-400 hover:text-white border border-transparent hover:border-gray-700">
                     <Icon size={18} />
                   </a>
                 ))}
@@ -121,29 +136,37 @@ const ContactSection = () => {
               <p className="text-gray-500 text-sm">I'll get back to you as soon as possible</p>
             </div>
 
+            {/* Success Alert */}
+            {status === "success" && (
+              <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-3.5 rounded-xl mb-6 text-sm font-medium">
+                <CheckCircle size={18} className="flex-shrink-0" />
+                Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {/* Error Alert */}
+            {status === "error" && (
+              <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3.5 rounded-xl mb-6 text-sm font-medium">
+                <AlertCircle size={18} className="flex-shrink-0" />
+                Something went wrong. Please try again or email directly.
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-gray-400 block">Your Name</label>
                   <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="John Doe"
-                    required
+                    type="text" name="name" value={formData.name} onChange={handleChange}
+                    placeholder="John Doe" required
                     className="w-full bg-[#141414] border border-gray-800 rounded-xl px-4 py-3.5 focus:outline-none focus:border-cyan-500 transition-all text-gray-200 text-sm placeholder-gray-600"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-gray-400 block">Your Email</label>
                   <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="john@example.com"
-                    required
+                    type="email" name="email" value={formData.email} onChange={handleChange}
+                    placeholder="john@example.com" required
                     className="w-full bg-[#141414] border border-gray-800 rounded-xl px-4 py-3.5 focus:outline-none focus:border-cyan-500 transition-all text-gray-200 text-sm placeholder-gray-600"
                   />
                 </div>
@@ -152,12 +175,8 @@ const ContactSection = () => {
               <div className="space-y-1.5">
                 <label className="text-xs font-medium text-gray-400 block">Subject</label>
                 <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Project discussion"
-                  required
+                  type="text" name="subject" value={formData.subject} onChange={handleChange}
+                  placeholder="Project discussion" required
                   className="w-full bg-[#141414] border border-gray-800 rounded-xl px-4 py-3.5 focus:outline-none focus:border-cyan-500 transition-all text-gray-200 text-sm placeholder-gray-600"
                 />
               </div>
@@ -165,23 +184,30 @@ const ContactSection = () => {
               <div className="space-y-1.5">
                 <label className="text-xs font-medium text-gray-400 block">Message</label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="5"
-                  placeholder="Tell me about your project..."
-                  required
+                  name="message" value={formData.message} onChange={handleChange}
+                  rows="5" placeholder="Tell me about your project..." required
                   className="w-full bg-[#141414] border border-gray-800 rounded-xl px-4 py-3.5 focus:outline-none focus:border-cyan-500 transition-all text-gray-200 text-sm resize-none placeholder-gray-600"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                disabled={sending}
-                className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 disabled:opacity-60 px-7 py-3.5 rounded-xl font-bold text-white transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-purple-500/20 text-sm"
+                disabled={status === "sending"}
+                className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed px-7 py-3.5 rounded-xl font-bold text-white transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-purple-500/20 text-sm"
               >
-                {sending ? "Sending..." : "Send Message"}
-                <IoSend size={16} />
+                {status === "sending" ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message <IoSend size={16} />
+                  </>
+                )}
               </button>
             </form>
           </div>
