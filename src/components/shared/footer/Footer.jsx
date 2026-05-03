@@ -35,7 +35,7 @@ const Footer = () => {
               {[
                 { Icon: FaGithub, link: "https://github.com/towfiq-dev" },
                 { Icon: FaLinkedin, link: "https://www.linkedin.com/in/towfiqul-islam1" },
-                { Icon: FaTwitter, link: "#" },
+                { Icon: FaTwitter, link: "https://x.com/towfiqul6185" },
                 { Icon: SiFacebook, link: "https://www.facebook.com/towfiqul6185" },
               ].map(({ Icon, link }, i) => (
                 <a
@@ -83,7 +83,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "Certificates", href: "/navLinks/certificates" },
-                { label: "Education", href: "/navLinks/education" },
+                { label: "Jobs", href: "/navLinks/contact" },
                 { label: "Contact", href: "/navLinks/contact" },
               ].map(({ label, href }) => (
                 <li key={label}>

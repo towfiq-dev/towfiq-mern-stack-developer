@@ -5,7 +5,7 @@ const SocialLinks = () => {
   const socials = [
     { id: 1, icon: <FaGithub />, url: 'https://github.com/towfiq-dev', label: 'GitHub' },
     { id: 2, icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/towfiqul-islam1', label: 'LinkedIn' },
-    { id: 3, icon: <FaTwitter />, url: 'https://twitter.com', label: 'Twitter' },
+    { id: 3, icon: <FaTwitter />, url: 'https://x.com/towfiqul6185', label: 'Twitter' },
     { id: 4, icon: <FaFacebookF />, url: 'https://www.facebook.com/towfiqul6185', label: 'Facebook' },
   ];
 

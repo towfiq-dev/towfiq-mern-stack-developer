@@ -58,7 +58,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
             </span>
-            Available for Freelance Work
+            Open to Full-time opportunities or Freelance projects
           </div>
 
           <p className="text-lg md:text-xl text-neutral-400">Hello, I'm</p>
@@ -101,7 +101,7 @@ export default function Hero() {
                 </span>
               </Link>
               <a
-                href="/towfiq-resume.pdf"
+                href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group py-3 px-5 rounded-full bg-neutral-900 border border-neutral-700 hover:border-neutral-500 flex items-center gap-2 transition-all duration-300"

@@ -117,7 +117,7 @@ const ContactSection = () => {
                 {[
                   { Icon: FaGithub, link: "https://github.com/towfiq-dev", label: "GitHub" },
                   { Icon: FaLinkedin, link: "https://www.linkedin.com/in/towfiqul-islam1", label: "LinkedIn" },
-                  { Icon: FaTwitter, link: "#", label: "Twitter" },
+                  { Icon: FaTwitter, link: "https://x.com/towfiqul6185", label: "Twitter" },
                   { Icon: FaFacebookF, link: "https://www.facebook.com/towfiqul6185", label: "Facebook" },
                 ].map(({ Icon, link, label }, idx) => (
                   <a key={idx} href={link} target="_blank" rel="noopener noreferrer" aria-label={label}

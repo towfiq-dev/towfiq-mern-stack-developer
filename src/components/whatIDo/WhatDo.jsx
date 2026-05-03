@@ -1,5 +1,5 @@
 import React from "react";
-import { Globe, Smartphone, Database, Settings } from "lucide-react";
+import { Globe, Smartphone, Database, MessageSquare, Zap, ShieldCheck } from "lucide-react";
 
 const services = [
   {
@@ -19,17 +19,31 @@ const services = [
   {
     title: "API & Database Design",
     description:
-      "RESTful & GraphQL APIs with optimized database schemas for performance and data integrity.",
+      "Architecting scalable MongoDB schemas and integrating BetterAuth for secure, multi-provider authentication and robust data integrity.",
     icon: <Database className="w-6 h-6 text-white" />,
     bgGradient: "from-emerald-500 to-teal-400",
   },
   {
-    title: "DevOps & Deployment",
+    title: "Authentication & Security",
     description:
-      "Cloud deployment on AWS & Vercel with CI/CD pipelines, Docker, and monitoring for production-ready apps.",
-    icon: <Settings className="w-6 h-6 text-white" />,
-    bgGradient: "from-orange-500 to-amber-500",
+      "Implementing robust security layers using BetterAuth, Firebase, or JWT to protect user data and ensure privacy.",
+    icon: <ShieldCheck className="w-6 h-6 text-white" />,
+    bgGradient: "from-indigo-600 to-violet-500",
   },
+  {
+    title: "Performance Optimization",
+    description:
+      "Speeding up web applications through code splitting, image optimization, and efficient caching strategies.",
+    icon: <Zap className="w-6 h-6 text-white" />,
+    bgGradient: "from-yellow-500 to-orange-400",
+  },
+  {
+    title: "Real-time Applications",
+    description:
+      "Building dynamic, live-updating features like chat systems or notifications using WebSockets and real-time databases.",
+    icon: <MessageSquare className="w-6 h-6 text-white" />,
+    bgGradient: "from-green-500 to-emerald-400",
+  }
 ];
 
 const Services = () => {

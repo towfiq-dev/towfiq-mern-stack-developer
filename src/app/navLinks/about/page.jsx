@@ -7,11 +7,15 @@ import Link from "next/link";
 
 const expertise = [
   "React & Next.js Applications",
-  "RESTful & GraphQL APIs",
   "Database Design & Optimization",
   "Responsive & Accessible UI",
   "Cloud Deployment (AWS, Vercel)",
   "Performance Optimization",
+  "Global State Management (Redux)",
+  "Secure Authentication (Firebase, BetterAuth)",
+  "Modern CSS Frameworks (Tailwind, DaisyUI)",
+  "Server-side Logic (Node.js, Express.js)",
+  "Version Control (Git & GitHub)",
 ];
 
 const stats = [
@@ -123,7 +127,7 @@ const AboutMe = () => {
                 Let's Work Together <FaArrowRight size={12} />
               </Link>
               <a
-                href="/towfiq-resume.pdf"
+                href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3.5 bg-[#111] border border-gray-800 rounded-full font-bold text-sm hover:bg-gray-800 transition-all"
@@ -164,7 +168,7 @@ const AboutMe = () => {
               Core Stack
             </span>
             <span className="italic">
-              React, Next.js, Node.js, MongoDB, Tailwind CSS, Firebase, Prisma, Docker, AWS &
+              React, Next.js, Node.js, MongoDB, Tailwind CSS, Firebase, Docker, &
               Vercel.
             </span>
           </p>

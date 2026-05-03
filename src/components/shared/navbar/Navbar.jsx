@@ -145,7 +145,7 @@ const Navbar = () => {
               {/* Mobile Buttons */}
               <div className="flex gap-3 pt-4 border-t border-white/10 mt-4">
                 <a
-                  href="/towfiq-resume.pdf"
+                  href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 text-gray-300 hover:bg-white/5 transition-all text-sm font-medium"
