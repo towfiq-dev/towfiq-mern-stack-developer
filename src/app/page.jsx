@@ -7,7 +7,7 @@ import ProjectSection from '@/components/projectsSection/projectCard/ProjectSect
 import TechStackHome from '@/components/techStackHome/TechStackHome';
 import Contact from '@/components/contact/Contact';
 import SocialLinks from '@/components/socialLinks/SocialLinks';
-import EducationPage from './navLinks/education/page';
+import Education from '@/components/education/Education';
 import TrainingSection from '@/components/trainingSection/TrainingSection';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       <Hero />
       <SocialLinks/>
       <States />
-      <EducationPage/>
+      <Education/>
       <TrainingSection/>
       <ProjectSection />
       <WhatDo />
