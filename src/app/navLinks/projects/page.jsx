@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { allProjects } from "@/components/allAPI/projectApi/ProjectApi";
-import Modals from "@/components/projectsModals/ProjectsModals";
+import Modals from "@/components/projectsSection/projectsModals/ProjectsModals";
 const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 

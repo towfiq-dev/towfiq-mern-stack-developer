@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="space-y-4 sm:space-y-5 order-2 lg:order-1 text-center lg:text-left">
 
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2.5 bg-neutral-900 border border-neutral-700 rounded-full px-4 py-2 text-[12px] md:text-[15px] text-neutral-300">
+          <div className="inline-flex items-center gap-2.5 bg-neutral-900 border border-neutral-700 rounded-full px-4 py-2 text-[15px] text-neutral-300">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
