@@ -10,7 +10,7 @@ export default function CourseModal({ course, onClose }) {
   const catStyle = getCatStyle(course.category);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
 
       <div
@@ -20,7 +20,7 @@ export default function CourseModal({ course, onClose }) {
       >
         <div className={`h-1.5 w-full rounded-t-3xl bg-gradient-to-r ${course.gradient}`} />
 
-        <div className="p-8">
+        <div className="px-4 py-8">
           {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-6">
             <div className="flex items-center gap-4">
@@ -34,7 +34,7 @@ export default function CourseModal({ course, onClose }) {
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full border ${catStyle.bg} ${catStyle.text} ${catStyle.border} mb-2`}>
                   {course.category}
                 </span>
-                <h2 className="text-xl font-bold text-white leading-tight">{course.title}</h2>
+                <h2 className="text-[15px] md:text-[20px] font-bold text-white leading-tight">{course.title}</h2>
               </div>
             </div>
             <button
@@ -63,7 +63,7 @@ export default function CourseModal({ course, onClose }) {
           {/* Description */}
           <div className="mb-6">
             <h3 className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-3">About this Course</h3>
-            <p className="text-sm text-white/70 leading-relaxed">{course.description}</p>
+            <p className="text-sm text-center md:text-justify text-white/70 leading-relaxed">{course.description}</p>
           </div>
 
           {/* Skills */}

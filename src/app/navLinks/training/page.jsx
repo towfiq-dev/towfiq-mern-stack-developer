@@ -3,7 +3,7 @@ import { div } from "framer-motion/client";
 
 const TrainingPage = () => {
   return (
-    <div className="mt-7 mb-15">
+    <div className="mt-15 mb-35">
       <CertificatesSection />
     </div>
   )
