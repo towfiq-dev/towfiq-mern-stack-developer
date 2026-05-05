@@ -5,6 +5,21 @@ import Image from "next/image";
 import profileImageUrl from "@/assets/towfiq.jpg";
 import Link from "next/link";
 
+export const metadata = {
+  title: "About Towfiqul Islam | MERN Stack Developer",
+  description:
+    "Learn about Towfiqul Islam — a Full Stack MERN Developer with expertise in React, Next.js, Node.js, MongoDB, and cloud technologies. 1+ years of experience, 20+ projects completed.",
+  alternates: {
+    canonical: "/navLinks/about",
+  },
+  openGraph: {
+    title: "About Towfiqul Islam | Full Stack Developer",
+    description:
+      "Towfiqul Islam is a passionate Full Stack Developer specializing in MERN Stack, React, and Next.js.",
+    url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/about",
+  },
+};
+
 const expertise = [
   "React & Next.js Applications",
   "Database Design & Optimization",

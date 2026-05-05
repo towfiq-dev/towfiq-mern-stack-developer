@@ -6,6 +6,21 @@ import {
   SiBetterauth,
 } from "react-icons/si";
 
+export const metadata = {
+  title: "Skills & Technologies | Towfiqul Islam",
+  description:
+    "Towfiqul Islam's technical skills: React (95%), Next.js (90%), JavaScript (95%), Node.js (90%), MongoDB (85%), Tailwind CSS, Redux, Docker, Firebase, and more.",
+  alternates: {
+    canonical: "/navLinks/skills",
+  },
+  openGraph: {
+    title: "Skills & Technologies | Towfiqul Islam",
+    description:
+      "Full stack technical skills of Towfiqul Islam — React, Next.js, Node.js, MongoDB, and modern DevOps tools.",
+    url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/skills",
+  },
+};
+
 const SkillCard = ({ name, icon, percentage, color }) => (
   <div className="bg-[#0a0a0a] border border-gray-900 p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center gap-2.5 group hover:border-gray-700 transition-all duration-300">
     <div
