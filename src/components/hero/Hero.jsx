@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Mail, Briefcase, ChevronRight } from "lucide-react";
+import { Mail, ChevronRight } from "lucide-react";
 import { FaDownload } from "react-icons/fa";
 import { useEffect, useRef } from "react";
 import profileImageUrl from "@/assets/towfiq.jpg";
