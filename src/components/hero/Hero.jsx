@@ -146,7 +146,7 @@ export default function Hero() {
 </div>
 
 {/* Floating Card: Projects */}
-<div className="absolute bottom-[8%] left-[1%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
+<div className="absolute -bottom-4 left-2 sm:bottom-[8%] sm:left-[5%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
   <div className="p-1.5 sm:p-2 rounded-lg bg-purple-900/40">
     <span className="text-base font-bold text-purple-400 leading-none">✓</span>
   </div>
