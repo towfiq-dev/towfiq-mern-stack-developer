@@ -134,16 +134,6 @@ export default function EducationDetails({ edu, onClose }) {
             </div>
           </div>
 
-          {/* Certificate Image */}
-          {edu.certificateImage && (
-            <div className="mb-6">
-              <h3 className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-3">
-                Certificate
-              </h3>
-
-            </div>
-          )}
-
           {/* Footer */}
           <div
             className="rounded-2xl p-4 flex items-center justify-between"

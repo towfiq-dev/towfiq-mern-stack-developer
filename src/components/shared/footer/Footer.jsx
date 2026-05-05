@@ -82,8 +82,9 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "Certificates", href: "/navLinks/certificates" },
+                { label: "Education", href: "/navLinks/education" },
                 { label: "Jobs", href: "/navLinks/contact" },
+                { label: "Training", href: "/navLinks/training" },
                 { label: "Contact", href: "/navLinks/contact" },
               ].map(({ label, href }) => (
                 <li key={label}>

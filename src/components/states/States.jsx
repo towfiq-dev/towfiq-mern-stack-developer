@@ -2,9 +2,9 @@ import React from "react";
 
 const stats = [
   { value: "20+", label: "Projects Completed" },
-  { value: "1+", label: "Years Experience" },
-  { value: "10+", label: "Happy Clients" },
-  { value: "5+", label: "Certifications" },
+  { value: "20+", label: "Tech Stack" },
+  { value: "500+", label: "Github Contribution" },
+  { value: "3+", label: "Certifications" },
 ];
 
 const SimpleStats = () => {
@@ -17,10 +17,10 @@ const SimpleStats = () => {
               key={index}
               className="flex flex-col items-center justify-center text-center group"
             >
-              <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-2 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-white text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-2 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                 {stat.value}
               </h2>
-              <p className="text-neutral-500 text-xs sm:text-sm font-medium tracking-wide">
+              <p className="text-neutral-500 text-[13px] md:text-[16px] font-medium tracking-wide">
                 {stat.label}
               </p>
             </div>

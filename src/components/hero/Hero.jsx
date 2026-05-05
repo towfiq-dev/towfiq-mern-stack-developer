@@ -5,6 +5,7 @@ import { FaDownload } from "react-icons/fa";
 import { useEffect, useRef } from "react";
 import profileImageUrl from "@/assets/towfiq.jpg";
 import Link from "next/link";
+import { MdBiotech } from "react-icons/md";
 
 const TYPING_TEXTS = ["Full Stack Developer", "MERN Stack Developer", "React / Next.js Expert"];
 
@@ -136,11 +137,11 @@ export default function Hero() {
           {/* Floating Card: Experience */}
           <div className="absolute top-4 right-2 sm:right-0 lg:-right-4 bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float">
             <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-900/40">
-              <Briefcase size={16} className="stroke-cyan-400" />
+              <MdBiotech size={16} className="stroke-cyan-400" />
             </div>
             <div>
-              <p className="text-xs font-bold text-white leading-none">1+ Years</p>
-              <p className="text-xs text-neutral-400 mt-0.5">Experience</p>
+              <p className="text-xs font-bold text-white leading-none">20+</p>
+              <p className="text-xs text-neutral-400 mt-0.5">Tech Stack</p>
             </div>
           </div>
 
