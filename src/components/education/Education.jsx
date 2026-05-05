@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Calendar, Star, TrendingUp } from "lucide-react";
 import {educationData} from '@/components/allAPI/educationAPI/EducationAPI'
+import EducationDetails from "./EducationDetails";
 
 const GPABar = ({ gpa, gradient }) => {
   const ref = useRef(null);
@@ -22,8 +23,11 @@ const GPABar = ({ gpa, gradient }) => {
 };
 
 const EducationPage = () => {
+  const [selectedEdu, setSelectedEdu] = useState(null);
+
   return (
-    <section className="bg-black text-white">
+  <>
+      <section className="bg-black text-white">
 
       {/* Header */}
       <div className="relative text-center pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 overflow-hidden">
@@ -122,7 +126,7 @@ const EducationPage = () => {
                           <Calendar size={14} className="text-gray-500 flex-shrink-0" />
                           <div>
                             <span className="text-[10px] text-gray-500 uppercase tracking-widest block">Year</span>
-                            <span className="text-white font-bold text-base leading-none">{edu.year}</span>
+                            <span className="text-white font-bold text-base leading-none">{edu.passingYear}</span>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
@@ -136,10 +140,21 @@ const EducationPage = () => {
 
                       {/* Progress bar */}
                       <GPABar gpa={edu.gpa} gradient={edu.gradient} />
-                      <div className="flex justify-between mt-1.5">
+                      <div className="flex justify-between mt-1.5 mb-5">
                         <span className="text-[10px] text-gray-600">0.00</span>
                         <span className="text-[10px] text-gray-600">5.00</span>
                       </div>
+
+                      {/* View Details Button */}
+                      <button
+                        onClick={() => setSelectedEdu(edu)}
+                        className={`w-full py-2.5 rounded-xl text-xs font-bold uppercase tracking-[0.15em] border ${edu.borderColor} bg-white/[0.03] hover:bg-white/[0.07] text-gray-300 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer`}
+                      >
+                        <span>View Details</span>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
                     </div>
                   </div>
 
@@ -158,7 +173,7 @@ const EducationPage = () => {
                   <div className={`hidden md:flex w-[46%] ${isRight ? "md:pl-10" : "md:pr-10"} items-center ${isRight ? "justify-start" : "justify-end"}`}>
                     <div className="text-center">
                       <span className={`text-4xl md:text-5xl font-black bg-gradient-to-r ${edu.gradient} bg-clip-text text-transparent opacity-20`}>
-                        {edu.year.split(" ")[0]}
+                        {edu.passingYear?.split(" ")[0]}
                       </span>
                     </div>
                   </div>
@@ -192,6 +207,12 @@ const EducationPage = () => {
         </motion.div>
       </div>
     </section>
+
+    {/* Details Modal */}
+    {selectedEdu && (
+      <EducationDetails edu={selectedEdu} onClose={() => setSelectedEdu(null)} />
+    )}
+  </>
   );
 };
 

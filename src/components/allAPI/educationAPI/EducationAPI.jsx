@@ -1,11 +1,20 @@
 import { GraduationCap, BookOpen, Award} from "lucide-react";
-
-export const educationData = [
+import SNPHS from '@/assets/SNPHS.png'
+import RGC from '@/assets/SNPHS.png'
+import SerajLogo from '@/assets/seraj.png'
+import RaipuraLogo from '@/assets/raipura.png'
+import NULogo from '@/assets/nu.png'
+import SSC from '@/assets/ph-certificate.png'
+import HSC from '@/assets/DYD-certificate.jpg'
+export const educationData = [    
   {
     id: 1,
     level: "SSC",
     fullTitle: "Secondary School Certificate",
-    year: "2020",
+    institution: "Seraj Nagar M.A. Pilot High School, Narsingdi",
+    passingYear: "2020",
+    roll: "136009",
+    regNo: "1711536124",
     gpa: "4.22",
     outOf: "5.00",
     status: "Completed",
@@ -16,12 +25,20 @@ export const educationData = [
     badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
     highlight: "Strong Foundation",
     description: "Completed SSC with a solid academic foundation in science and core subjects.",
+    icon: "🏫",
+    institutionLogo:SerajLogo,
+    board: 'Dhaka Education Board',
+    boardLogo: SNPHS,
+    certificateImage: SSC,
   },
   {
     id: 2,
     level: "HSC",
     fullTitle: "Higher Secondary Certificate",
-    year: "2022",
+    institution: "Raipura Govt. College, Narsingdi",
+    passingYear: "2022",
+    roll: "136009",
+    regNo: "1711536124",
     gpa: "4.17",
     outOf: "5.00",
     status: "Completed",
@@ -32,12 +49,20 @@ export const educationData = [
     badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
     highlight: "Advanced Studies",
     description: "Excelled in higher secondary with a consistent GPA across all subjects.",
+    icon: "🏫",
+    institutionLogo: RaipuraLogo,
+    board: 'Dhaka Education Board',
+    boardLogo: RGC,
+    certificateImage: HSC,
   },
   {
     id: 3,
     level: "B.Sc",
     fullTitle: "Bachelor of Science (Running)",
-    year: "2022 — Present",
+    institution: "National University",
+    passingYear: "2022 — Present",
+    roll: null,
+    reg: null,
     gpa: "Running",
     outOf: null,
     status: "3rd Year",
@@ -48,5 +73,10 @@ export const educationData = [
     badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
     highlight: "Currently Enrolled",
     description: "Pursuing B.Sc in Social Work, currently in the 3rd year with a focus on social welfare, community development, and human behavior.",
+    icon: "🎓",
+    institutionLogo: NULogo,
+    board: 'National University',
+    boardLogo: NULogo,
+    certificateImage: null,
   },
 ];
