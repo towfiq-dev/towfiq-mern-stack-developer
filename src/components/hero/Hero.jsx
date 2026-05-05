@@ -135,26 +135,26 @@ export default function Hero() {
           </div>
 
           {/* Floating Card: Experience */}
-          <div className="absolute top-4 right-2 sm:right-0 lg:-right-4 bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float">
-            <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-900/40">
-              <MdBiotech size={16} className="stroke-cyan-400" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-white leading-none">20+</p>
-              <p className="text-xs text-neutral-400 mt-0.5">Tech Stack</p>
-            </div>
-          </div>
+<div className="absolute top-[8%] right-[5%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float">
+  <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-900/40">
+    <MdBiotech size={16} className="stroke-cyan-400" />
+  </div>
+  <div>
+    <p className="text-xs font-bold text-white leading-none">20+</p>
+    <p className="text-xs text-neutral-400 mt-0.5">Tech Stack</p>
+  </div>
+</div>
 
-          {/* Floating Card: Projects */}
-          <div className="absolute bottom-4 left-2 sm:left-0 lg:-left-4 bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
-            <div className="p-1.5 sm:p-2 rounded-lg bg-purple-900/40">
-              <span className="text-base font-bold text-purple-400 leading-none">✓</span>
-            </div>
-            <div>
-              <p className="text-xs font-bold text-white leading-none">20+ Projects</p>
-              <p className="text-xs text-neutral-400 mt-0.5">Completed</p>
-            </div>
-          </div>
+{/* Floating Card: Projects */}
+<div className="absolute bottom-[8%] left-[1%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
+  <div className="p-1.5 sm:p-2 rounded-lg bg-purple-900/40">
+    <span className="text-base font-bold text-purple-400 leading-none">✓</span>
+  </div>
+  <div>
+    <p className="text-xs font-bold text-white leading-none">20+ Projects</p>
+    <p className="text-xs text-neutral-400 mt-0.5">Completed</p>
+  </div>
+</div>
         </div>
 
       </div>
