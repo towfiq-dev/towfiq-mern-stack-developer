@@ -1,23 +1,47 @@
-import React from 'react';
-import Education from '@/components/education/Education'
+import Education from "@/components/education/Education";
 
 export const metadata = {
   title: "Education | Towfiqul Islam",
   description:
-    "Explore the academic background and educational qualifications of Towfiqul Islam — Full Stack MERN Stack Developer.",
-  alternates: {
-    canonical: "/navLinks/education",
-  },
+    "Academic background of Towfiqul Islam — SSC (GPA 4.22), HSC (GPA 4.17), and B.Sc in Social Work (Running). Full Stack MERN Developer from Bangladesh.",
+  alternates: { canonical: "/navLinks/education" },
   openGraph: {
     title: "Education | Towfiqul Islam",
     description:
-      "Academic background and qualifications of Towfiqul Islam, Full Stack Developer.",
+      "Academic qualifications of Towfiqul Islam — MERN Stack Developer from Bangladesh.",
     url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/education",
+    images: [
+      {
+        url: "https://towfiq-mern-stack-developer.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Education — Towfiqul Islam",
+      },
+    ],
   },
 };
 
+const BASE = "https://towfiq-mern-stack-developer.vercel.app";
+
+const educationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "Education", item: `${BASE}/navLinks/education` },
+  ],
+};
+
 const EducationPage = () => {
-  return <Education/>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationJsonLd) }}
+      />
+      <Education />
+    </>
+  );
 };
 
 export default EducationPage;

@@ -3,42 +3,34 @@ import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const BASE = "https://towfiq-mern-stack-developer.vercel.app";
 
 export const metadata = {
-  // ── Basic ──────────────────────────────────────────────────────────────
+  // ── Title ──────────────────────────────────────────────────────────────────
   title: {
     default: "Towfiqul Islam | MERN Stack Developer",
     template: "%s | Towfiqul Islam",
   },
+
+  // ── Description ────────────────────────────────────────────────────────────
   description:
-    "Towfiqul Islam is a Full Stack MERN Stack Developer specializing in React, Next.js, Node.js, MongoDB, and modern web technologies. Explore my portfolio, projects, and skills.",
+    "Towfiqul Islam is a Full Stack MERN Stack Developer from Bangladesh specializing in React, Next.js, Node.js, MongoDB, and modern web technologies. Explore my portfolio, projects, and skills.",
+
+  // ── Keywords ───────────────────────────────────────────────────────────────
   keywords: [
     "Towfiqul Islam",
-    "Towfiqul",
-    "Towfiq",
-    "Toufiq",
-    "Toufik",
-    "Towfik",
-    "TOWFIQ",
-    "TOWFIQUL ISLAM",
-    "TOWFIQUL",
     "Towfiq Islam",
     "Towfiqul Islam developer",
     "Towfiqul Islam portfolio",
     "Towfiqul Islam MERN",
+    "Towfiqul Islam React",
+    "Towfiqul Islam Next.js",
+    "Towfiqul Islam Bangladesh",
     "MERN Stack Developer",
-    "MERN Stack Web Developer",
-    "Full Stack Developer",
-    "Full Stack Web Developer",
+    "Full Stack Developer Bangladesh",
     "React Developer",
     "Next.js Developer",
     "Node.js Developer",
@@ -47,16 +39,17 @@ export const metadata = {
     "Web Developer Bangladesh",
     "Frontend Developer",
     "Backend Developer",
+    "Hire MERN Developer",
   ],
-  authors: [{ name: "Towfiqul Islam", url: "https://towfiq-mern-stack-developer.vercel.app" }],
+
+  // ── Author / Creator ───────────────────────────────────────────────────────
+  authors: [{ name: "Towfiqul Islam", url: BASE }],
   creator: "Towfiqul Islam",
   publisher: "Towfiqul Islam",
 
-  // ── Canonical / robots ─────────────────────────────────────────────────
-  metadataBase: new URL("https://towfiq-mern-stack-developer.vercel.app"),
-  alternates: {
-    canonical: "/",
-  },
+  // ── Canonical / Robots ─────────────────────────────────────────────────────
+  metadataBase: new URL(BASE),
+  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
@@ -69,11 +62,14 @@ export const metadata = {
     },
   },
 
-  // ── Open Graph ─────────────────────────────────────────────────────────
+  // ── Open Graph ─────────────────────────────────────────────────────────────
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName: "Towfiqul",
+    lastName: "Islam",
+    username: "towfiq-dev",
     locale: "en_US",
-    url: "https://towfiq-mern-stack-developer.vercel.app",
+    url: BASE,
     siteName: "Towfiqul Islam | Portfolio",
     title: "Towfiqul Islam | MERN Stack Developer",
     description:
@@ -84,24 +80,28 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Towfiqul Islam — MERN Stack Developer Portfolio",
+        type: "image/png",
       },
     ],
   },
 
-  // ── Twitter / X Card ───────────────────────────────────────────────────
+  // ── Twitter / X Card ───────────────────────────────────────────────────────
   twitter: {
     card: "summary_large_image",
     title: "Towfiqul Islam | MERN Stack Developer",
     description:
-      "Full Stack Developer specializing in React, Next.js, Node.js & MongoDB. Check out my portfolio and projects.",
+      "Full Stack Developer specializing in React, Next.js, Node.js & MongoDB. Explore my projects and skills.",
     images: ["/og-image.png"],
-    creator: "@towfiqul_islam",
+    creator: "@towfiqul6185",
   },
 
-  // ── Verification (add your actual codes when ready) ────────────────────
+  // ── Verification ───────────────────────────────────────────────────────────
   verification: {
-    google: "qQ09-CX-hTaEdQ-HMEgPmo5WbpwWw0s8x-pVH96AwTI"
+    google: "qQ09-CX-hTaEdQ-HMEgPmo5WbpwWw0s8x-pVH96AwTI",
   },
+
+  // ── Category ───────────────────────────────────────────────────────────────
+  category: "technology",
 };
 
 export const viewport = {
@@ -119,9 +119,7 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-black text-white overflow-x-hidden">
         <Navbar />
-        <main>
-          {children}
-        </main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

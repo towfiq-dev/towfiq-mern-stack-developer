@@ -87,7 +87,7 @@ const Navbar = () => {
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/towfiq-resume.pdf"
+              href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-gray-300 hover:bg-white/5 hover:border-white/20 transition-all text-sm font-medium"

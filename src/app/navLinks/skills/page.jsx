@@ -3,29 +3,64 @@ import {
   SiReact, SiNextdotjs, SiJavascript, SiTailwindcss, SiRedux,
   SiNodedotjs, SiExpress, SiMongodb,
   SiGit, SiDocker, SiFirebase, SiPrisma, SiVercel, SiFigma,
-  SiBetterauth,
 } from "react-icons/si";
 
 export const metadata = {
   title: "Skills & Technologies | Towfiqul Islam",
   description:
-    "Towfiqul Islam's technical skills: React (95%), Next.js (90%), JavaScript (95%), Node.js (90%), MongoDB (85%), Tailwind CSS, Redux, Docker, Firebase, and more.",
-  alternates: {
-    canonical: "/navLinks/skills",
-  },
+    "Towfiqul Islam's full technical skill set: React (95%), Next.js (90%), JavaScript (95%), Node.js (90%), MongoDB (85%), Tailwind CSS, Redux, Docker, Firebase, and more.",
+  alternates: { canonical: "/navLinks/skills" },
   openGraph: {
     title: "Skills & Technologies | Towfiqul Islam",
     description:
       "Full stack technical skills of Towfiqul Islam — React, Next.js, Node.js, MongoDB, and modern DevOps tools.",
     url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/skills",
+    images: [
+      {
+        url: "https://towfiq-mern-stack-developer.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Skills — Towfiqul Islam",
+      },
+    ],
   },
+};
+
+const BASE = "https://towfiq-mern-stack-developer.vercel.app";
+
+const skillsJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+        { "@type": "ListItem", position: 2, name: "Skills", item: `${BASE}/navLinks/skills` },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      name: "Technical Skills of Towfiqul Islam",
+      description: "Programming languages, frameworks, and tools used by Towfiqul Islam.",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "React — 95%" },
+        { "@type": "ListItem", position: 2, name: "Next.js — 90%" },
+        { "@type": "ListItem", position: 3, name: "JavaScript — 95%" },
+        { "@type": "ListItem", position: 4, name: "Node.js — 90%" },
+        { "@type": "ListItem", position: 5, name: "MongoDB — 85%" },
+        { "@type": "ListItem", position: 6, name: "Tailwind CSS — 92%" },
+        { "@type": "ListItem", position: 7, name: "Redux — 80%" },
+        { "@type": "ListItem", position: 8, name: "Docker — 78%" },
+        { "@type": "ListItem", position: 9, name: "Firebase — 85%" },
+        { "@type": "ListItem", position: 10, name: "Git — 92%" },
+      ],
+    },
+  ],
 };
 
 const SkillCard = ({ name, icon, percentage, color }) => (
   <div className="bg-[#0a0a0a] border border-gray-900 p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center gap-2.5 group hover:border-gray-700 transition-all duration-300">
-    <div
-      className={`text-3xl sm:text-4xl md:text-5xl ${color} bg-gray-900/50 p-3 sm:p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300`}
-    >
+    <div className={`text-3xl sm:text-4xl md:text-5xl ${color} bg-gray-900/50 p-3 sm:p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300`}>
       {icon}
     </div>
     <h3 className="text-white font-medium text-xs sm:text-sm mt-1 text-center">{name}</h3>
@@ -75,7 +110,6 @@ const skillsData = {
       { name: "Docker", icon: <SiDocker />, percentage: "78%", color: "text-[#2496ED]" },
       { name: "Firebase", icon: <SiFirebase />, percentage: "85%", color: "text-[#FFCA28]" },
       { name: "Prisma", icon: <SiPrisma />, percentage: "80%", color: "text-white" },
-      { name: "Better Auth", icon: <SiBetterauth />, percentage: "70%", color: "text-[#FF9900]" },
       { name: "Vercel", icon: <SiVercel />, percentage: "90%", color: "text-white" },
       { name: "Figma", icon: <SiFigma />, percentage: "75%", color: "text-[#F24E1E]" },
     ],
@@ -84,39 +118,45 @@ const skillsData = {
 
 const SkillsSection = () => {
   return (
-    <section className="bg-black py-12 sm:py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
-      <div className="max-w-7xl mx-auto pt-24 sm:pt-28">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(skillsJsonLd) }}
+      />
+      <section
+        className="bg-black py-12 sm:py-16 px-4 sm:px-6 lg:px-8 min-h-screen"
+        aria-label="Skills and Technologies — Towfiqul Islam"
+      >
+        <div className="max-w-7xl mx-auto pt-24 sm:pt-28">
+          <div className="text-center mb-16 sm:mb-20">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
+              Skills & Technologies
+            </h1>
+            <p className="text-gray-400 text-sm sm:text-base">
+              Technologies I work with to bring ideas to life
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto mt-5 rounded-full"></div>
+          </div>
 
-        {/* Title */}
-        <div className="text-center mb-16 sm:mb-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
-            Skills & Technologies
-          </h1>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Technologies I work with to bring ideas to life
-          </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto mt-5 rounded-full"></div>
-        </div>
-
-        {/* Categories */}
-        <div className="space-y-16 sm:space-y-20">
-          {Object.values(skillsData).map((category, idx) => (
-            <div key={idx}>
-              <SectionHeader
-                title={category.title}
-                subtitle={category.subtitle}
-                accentColor={category.accent}
-              />
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
-                {category.items.map((skill, sIdx) => (
-                  <SkillCard key={sIdx} {...skill} />
-                ))}
+          <div className="space-y-16 sm:space-y-20">
+            {Object.values(skillsData).map((category, idx) => (
+              <div key={idx}>
+                <SectionHeader
+                  title={category.title}
+                  subtitle={category.subtitle}
+                  accentColor={category.accent}
+                />
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
+                  {category.items.map((skill, sIdx) => (
+                    <SkillCard key={sIdx} {...skill} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -1,53 +1,17 @@
-"use client";
 import Image from "next/image";
 import { Mail, ChevronRight } from "lucide-react";
 import { FaDownload } from "react-icons/fa";
-import { useEffect, useRef } from "react";
+import { MdBiotech } from "react-icons/md";
 import profileImageUrl from "@/assets/towfiq.jpg";
 import Link from "next/link";
-import { MdBiotech } from "react-icons/md";
-
-const TYPING_TEXTS = ["Full Stack Developer", "MERN Stack Developer", "React / Next.js Expert"];
+import TypingAnimation from "./TypingAnimation";
 
 export default function Hero() {
-  const typingRef = useRef(null);
-
-  useEffect(() => {
-    const el = typingRef.current;
-    if (!el) return;
-
-    let textIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-    let timeout;
-
-    const type = () => {
-      const current = TYPING_TEXTS[textIndex];
-      if (!deleting) {
-        el.textContent = current.slice(0, charIndex + 1);
-        charIndex++;
-        if (charIndex === current.length) {
-          deleting = true;
-          timeout = setTimeout(type, 2000);
-          return;
-        }
-      } else {
-        el.textContent = current.slice(0, charIndex - 1);
-        charIndex--;
-        if (charIndex === 0) {
-          deleting = false;
-          textIndex = (textIndex + 1) % TYPING_TEXTS.length;
-        }
-      }
-      timeout = setTimeout(type, deleting ? 50 : 80);
-    };
-
-    timeout = setTimeout(type, 500);
-    return () => clearTimeout(timeout);
-  }, []);
-
   return (
-    <section className="bg-[#050505] text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 lg:pt-10 lg:pb-0">
+    <section
+      className="bg-[#050505] text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 lg:pt-10 lg:pb-0"
+      aria-label="Hero section — Towfiqul Islam, Full Stack MERN Developer"
+    >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
         {/* Left: Text Content */}
@@ -62,20 +26,14 @@ export default function Hero() {
             Open to Full-time opportunities or Freelance projects
           </div>
 
-          <p className="text-lg md:text-xl text-neutral-400">Hello, I'm</p>
+          <p className="text-lg md:text-xl text-neutral-400">Hello, I&apos;m</p>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
             Towfiqul Islam
           </h1>
 
-          {/* Typing Animation */}
-          <div className="flex items-center justify-center lg:justify-start gap-1 h-9 sm:h-11">
-            <span
-              ref={typingRef}
-              className="text-xl sm:text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
-            ></span>
-            <span className="inline-block w-0.5 h-7 sm:h-8 bg-cyan-400 ml-0.5 animate-pulse"></span>
-          </div>
+          {/* Typing Animation — client component */}
+          <TypingAnimation />
 
           <p className="text-sm sm:text-base text-neutral-400 max-w-lg mx-auto lg:mx-0 leading-relaxed">
             I craft modern, high-performance web applications with clean architecture and intuitive user
@@ -125,7 +83,7 @@ export default function Hero() {
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-neutral-800 bg-neutral-900 overflow-hidden shadow-2xl z-10">
             <Image
               src={profileImageUrl}
-              alt="Towfiqul Islam - Portfolio Profile Picture"
+              alt="Towfiqul Islam — Full Stack MERN Developer, Portfolio Profile Picture"
               fill
               sizes="(max-width: 640px) 224px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
               style={{ objectFit: "cover" }}
@@ -135,26 +93,26 @@ export default function Hero() {
           </div>
 
           {/* Floating Card: Experience */}
-<div className="absolute top-[8%] right-[5%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float">
-  <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-900/40">
-    <MdBiotech size={16} className="stroke-cyan-400" />
-  </div>
-  <div>
-    <p className="text-xs font-bold text-white leading-none">20+</p>
-    <p className="text-xs text-neutral-400 mt-0.5">Tech Stack</p>
-  </div>
-</div>
+          <div className="absolute top-[8%] right-[5%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float">
+            <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-900/40">
+              <MdBiotech size={16} className="stroke-cyan-400" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-white leading-none">20+</p>
+              <p className="text-xs text-neutral-400 mt-0.5">Tech Stack</p>
+            </div>
+          </div>
 
-{/* Floating Card: Projects */}
-<div className="absolute -bottom-4 left-2 sm:bottom-[8%] sm:left-[5%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
-  <div className="p-1.5 sm:p-2 rounded-lg bg-purple-900/40">
-    <span className="text-base font-bold text-purple-400 leading-none">✓</span>
-  </div>
-  <div>
-    <p className="text-xs font-bold text-white leading-none">20+ Projects</p>
-    <p className="text-xs text-neutral-400 mt-0.5">Completed</p>
-  </div>
-</div>
+          {/* Floating Card: Projects */}
+          <div className="absolute -bottom-4 left-2 sm:bottom-[8%] sm:left-[5%] bg-neutral-900 border border-neutral-800 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl z-20 flex gap-2 sm:gap-3 items-center animate-float [animation-delay:1.2s]">
+            <div className="p-1.5 sm:p-2 rounded-lg bg-purple-900/40">
+              <span className="text-base font-bold text-purple-400 leading-none">✓</span>
+            </div>
+            <div>
+              <p className="text-xs font-bold text-white leading-none">20+ Projects</p>
+              <p className="text-xs text-neutral-400 mt-0.5">Completed</p>
+            </div>
+          </div>
         </div>
 
       </div>

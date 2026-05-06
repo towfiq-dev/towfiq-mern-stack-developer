@@ -1,14 +1,15 @@
-"use client";
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { allProjects } from "@/components/allAPI/projectApi/ProjectApi";
 
+// Server component — Google can now fully crawl all project titles, descriptions, tags
 const FeaturedProjects = () => {
   return (
-    <section className="bg-black text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      className="bg-black text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
+      aria-label="Featured Projects by Towfiqul Islam"
+    >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -24,23 +25,18 @@ const FeaturedProjects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid — fully server-rendered, Google reads all content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {allProjects.slice(0,3).map((project, i) => (
-            <motion.div
+          {allProjects.slice(0, 3).map((project) => (
+            <article
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-[#0f1115] border border-gray-800 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-gray-700 group"
+              className="bg-[#0f1115] border border-gray-800 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-gray-700 group hover:-translate-y-2"
             >
               {/* Image */}
               <div className="relative h-48 sm:h-52 w-full bg-gray-900 overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} — project by Towfiqul Islam`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}
@@ -77,13 +73,14 @@ const FeaturedProjects = () => {
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View live demo of ${project.title}`}
                   className="flex items-center gap-2 text-cyan-400 border border-cyan-400/20 w-fit px-4 py-2 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 text-sm font-medium"
                 >
                   <ExternalLink size={15} />
                   Live Demo
                 </a>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
 
