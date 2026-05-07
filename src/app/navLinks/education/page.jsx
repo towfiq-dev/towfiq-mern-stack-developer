@@ -39,7 +39,9 @@ const EducationPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(educationJsonLd) }}
       />
-      <Education />
+      <div className="mt-20">
+        <Education />
+      </div>
     </>
   );
 };

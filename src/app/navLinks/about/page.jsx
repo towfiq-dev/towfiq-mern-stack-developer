@@ -1,9 +1,11 @@
 import React from "react";
-import { Download, CheckCircle2, Code2, Briefcase, GraduationCap, Users } from "lucide-react";
+import { Download, CheckCircle2, Code2, GraduationCap } from "lucide-react";
 import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import profileImageUrl from "@/assets/towfiq.jpg";
 import Link from "next/link";
+import { IoGitCommit } from "react-icons/io5";
+import { MdBiotech } from "react-icons/md";
 
 export const metadata = {
   title: "About Towfiqul Islam | Full Stack MERN Developer",
@@ -74,9 +76,9 @@ const expertise = [
 
 const stats = [
   { icon: <Code2 size={18} />, value: "20+", label: "Projects Completed", color: "bg-blue-500" },
-  { icon: <Briefcase size={18} />, value: "1+", label: "Years Experience", color: "bg-purple-500" },
-  { icon: <GraduationCap size={18} />, value: "5+", label: "Certifications", color: "bg-orange-500" },
-  { icon: <Users size={18} />, value: "10+", label: "Happy Clients", color: "bg-emerald-500" },
+  { icon: <MdBiotech size={18} />, value: "20+", label: "Tech Stack", color: "bg-purple-500" },
+  { icon: <GraduationCap size={18} />, value: "3+", label: "Certifications", color: "bg-orange-500" },
+  { icon: <IoGitCommit size={18} />, value: "500+", label: "Github Contribution", color: "bg-emerald-500" },
 ];
 
 const AboutMe = () => {
@@ -125,13 +127,13 @@ const AboutMe = () => {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-5 right-4 sm:right-8 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-3 shadow-2xl z-20">
+              <div className="absolute -bottom-10 right-4 sm:right-8 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-3 shadow-2xl z-20">
                 <div className="p-2.5 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl ring-4 ring-purple-600/20">
                   <Code2 size={20} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-lg sm:text-xl font-black leading-none text-white">1+ Years</p>
-                  <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-1">Experience</p>
+                  <p className="text-lg sm:text-xl font-black leading-none text-white">20+ Project</p>
+                  <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-1">Complete</p>
                 </div>
               </div>
 
@@ -140,7 +142,7 @@ const AboutMe = () => {
 
             {/* Right: Bio */}
             <div className="flex flex-col justify-center">
-              <span className="text-cyan-400 text-xs font-black tracking-widest uppercase mb-2 block">
+              <span className="text-cyan-400 text-xs md:text-[17px] font-black tracking-widest uppercase mb-5 mt-5 block">
                 Professional Bio
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5 leading-snug">

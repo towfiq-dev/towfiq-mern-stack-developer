@@ -12,7 +12,7 @@ export default function Hero() {
       className="bg-[#050505] text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 lg:pt-10 lg:pb-0"
       aria-label="Hero section — Towfiqul Islam, Full Stack MERN Developer"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="max-w-7xl pt-20 mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
         {/* Left: Text Content */}
         <div className="space-y-4 sm:space-y-5 order-2 lg:order-1 text-center lg:text-left">
