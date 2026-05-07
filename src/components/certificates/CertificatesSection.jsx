@@ -17,7 +17,7 @@ export default function CertificatesSection() {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold tracking-[0.3em] text-white/30 uppercase mb-4">
+          <p className="text-xs font-semibold tracking-[0.3em] text-cyan-500/60 uppercase mb-4">
             Achievements & Learning
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
