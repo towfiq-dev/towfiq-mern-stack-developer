@@ -76,6 +76,14 @@ const skillsJsonLd = {
 };
 
 
-export default function SkillsPage() {
-  return <SkillsClient skillsJsonLd={skillsJsonLd} />;
-}
+import React from 'react';
+
+const SkillsPage = () => {
+  return (
+    <div>
+      <SkillsClient skillsJsonLd={skillsJsonLd} />
+    </div>
+  );
+};
+
+export default SkillsPage;

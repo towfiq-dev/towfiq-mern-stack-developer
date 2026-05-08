@@ -77,7 +77,7 @@ const SkillsClient = ({ skillsJsonLd }) => {
           </div>
 
           {/* Skills grid — two columns on large screens */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 xl:gap-x-12 gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 xl:gap-x-12 gap-y-10">
             <div className="flex flex-col gap-10">
               {leftGroups.map((group, i) => (
                 <CategoryColumn

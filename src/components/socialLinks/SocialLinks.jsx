@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaGithub, FaLinkedinIn, FaTwitter, FaFacebookF } from 'react-icons/fa';
+import { FaSquareWhatsapp } from 'react-icons/fa6';
 
 const SocialLinks = () => {
   const socials = [
@@ -7,6 +8,7 @@ const SocialLinks = () => {
     { id: 2, icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/towfiqul-islam1', label: 'LinkedIn' },
     { id: 3, icon: <FaTwitter />, url: 'https://x.com/towfiqul6185', label: 'Twitter' },
     { id: 4, icon: <FaFacebookF />, url: 'https://www.facebook.com/towfiqul6185', label: 'Facebook' },
+    { id: 5, icon: <FaSquareWhatsapp />, url: 'https:https://wa.me/+8801739943577', label: 'WhatsApp' },
   ];
 
   return (
