@@ -6,7 +6,7 @@ export default function sitemap() {
     {
       url: baseUrl,
       lastModified: now,
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1.0,
     },
     {
@@ -18,7 +18,7 @@ export default function sitemap() {
     {
       url: `${baseUrl}/navLinks/projects`,
       lastModified: now,
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
@@ -37,7 +37,7 @@ export default function sitemap() {
       url: `${baseUrl}/navLinks/training`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/navLinks/contact`,

@@ -1,10 +1,12 @@
 import React from "react";
 import { services } from '../allAPI/whatIDoAPI/WhatIDoApi';
 
-
 const Services = () => {
   return (
-    <section className="bg-black py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
+    <section
+      className="bg-black py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8"
+      aria-label="Services offered by Towfiqul Islam — Full Stack MERN Developer"
+    >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -23,13 +25,14 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((service, index) => (
-            <div
+            <article
               key={index}
               className="group relative bg-[#0a0a0b] border border-gray-800/60 p-6 rounded-3xl hover:border-gray-700 transition-all duration-300 flex flex-col"
             >
               {/* Icon */}
               <div
                 className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${service.bgGradient} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                aria-hidden="true"
               >
                 {service.icon}
               </div>
@@ -42,7 +45,7 @@ const Services = () => {
               </p>
 
               <div className="absolute inset-0 rounded-3xl bg-white/0 group-hover:bg-white/[0.015] transition-colors pointer-events-none"></div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

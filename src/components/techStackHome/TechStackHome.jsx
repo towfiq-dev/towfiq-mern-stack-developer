@@ -29,7 +29,10 @@ const techItems = [
 
 const TechStackHome = () => {
   return (
-    <section className="bg-black py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      className="bg-black py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
+      aria-label="Tech stack and technologies used by Towfiqul Islam"
+    >
       <div className="max-w-6xl mx-auto">
 
         {/* Badge */}
@@ -47,34 +50,36 @@ const TechStackHome = () => {
           </span>
         </h2>
 
-        {/* Tech Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
+        {/* Tech Grid — server-rendered so Google can read all tech names */}
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5" aria-label="List of technologies">
           {techItems.map((tech, index) => (
-            <div
+            <li
               key={index}
               className="group bg-[#0d0d0d] border border-gray-800/50 p-4 sm:p-5 h-32 sm:h-36 md:h-40 rounded-2xl flex flex-col items-center justify-center gap-2.5 hover:border-cyan-500/40 hover:bg-[#111] transition-all duration-300 hover:-translate-y-1"
             >
-              <div
+              <span
                 className={`text-2xl sm:text-3xl md:text-4xl font-mono ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                aria-hidden="true"
               >
                 {tech.icon}
-              </div>
+              </span>
               <span className="text-gray-400 text-xs sm:text-sm font-medium group-hover:text-white transition-colors text-center">
                 {tech.name}
               </span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Link */}
         <div className="mt-12 text-center">
           <Link
             href="/navLinks/skills"
             className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-medium text-base sm:text-lg"
+            aria-label="View all skills and proficiency levels of Towfiqul Islam"
           >
-            <Zap className="w-4 h-4 fill-cyan-400 animate-pulse" />
+            <Zap className="w-4 h-4 fill-cyan-400 animate-pulse" aria-hidden="true" />
             View all skills & proficiency
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
         </div>
       </div>

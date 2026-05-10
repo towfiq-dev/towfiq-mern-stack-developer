@@ -25,16 +25,22 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" aria-label="Towfiqul Islam — Home">
-            <Image width={140} height={40} alt="Towfiq Dev Logo" src={Logo} priority />
+          <Link href="/" aria-label="Towfiqul Islam — Portfolio Home">
+            <Image
+              width={140}
+              height={40}
+              alt="Towfiqul Islam — MERN Stack Developer"
+              src={Logo}
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center bg-white/5 border border-white/10 rounded-full px-2 py-1">
+          <nav className="hidden lg:flex items-center bg-white/5 border border-white/10 rounded-full px-2 py-1" aria-label="Main navigation">
             {navLinks.map((link) => (
               <NavActiveLink key={link.name} href={link.href} icon={link.icon} name={link.name} />
             ))}
-          </div>
+          </nav>
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-3">
@@ -42,16 +48,18 @@ const Navbar = () => {
               href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Download Towfiqul Islam's Resume"
               className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-gray-300 hover:bg-white/5 hover:border-white/20 transition-all text-sm font-medium"
             >
-              <Download size={14} />
+              <Download size={14} aria-hidden="true" />
               <span>Resume</span>
             </a>
             <Link
               href="/navLinks/contact"
+              aria-label="Hire Towfiqul Islam — Contact"
               className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-bold shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all active:scale-95"
             >
-              <Zap size={14} fill="white" />
+              <Zap size={14} fill="white" aria-hidden="true" />
               Hire Me
             </Link>
           </div>

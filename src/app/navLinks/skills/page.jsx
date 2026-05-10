@@ -1,14 +1,18 @@
 import SkillsClient from "@/components/skillsClient/SkillsClient";
+import React from 'react';
+
+const BASE = "https://towfiq-mern-stack-developer.vercel.app";
 
 export const metadata = {
-  title: "Skills & Technologies | Towfiqul Islam",
+  title: "Skills & Technologies | Towfiqul Islam | তৌফিকুল ইসলাম",
   description:
-    "Towfiqul Islam's full technical skill set: React (95%), Next.js (90%), JavaScript (95%), Node.js (90%), MongoDB (85%), Tailwind CSS, Redux, Docker, Firebase, and more.",
-
+    "Towfiqul Islam's (তৌফিকুল ইসলাম) full technical skill set: React (95%), Next.js (90%), JavaScript (95%), Node.js (90%), MongoDB (85%), Tailwind CSS, Redux, Docker, Firebase, and more.",
   keywords: [
+    "Towfiqul Islam skills",
+    "তৌফিকুল ইসলাম দক্ষতা",
     "Towfiqul Islam",
     "MERN Stack Developer",
-    "React Developer",
+    "React Developer Bangladesh",
     "Next.js Developer",
     "Node.js",
     "MongoDB",
@@ -17,33 +21,29 @@ export const metadata = {
     "Full Stack Developer Bangladesh",
     "Web Developer Portfolio",
   ],
-
   alternates: { canonical: "/navLinks/skills" },
   openGraph: {
-    title: "Skills & Technologies | Towfiqul Islam",
+    title: "Skills & Technologies | Towfiqul Islam | তৌফিকুল ইসলাম",
     description:
-      "Full stack technical skills of Towfiqul Islam — React, Next.js, Node.js, MongoDB, and modern DevOps tools.",
-    url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/skills",
+      "Full stack technical skills of Towfiqul Islam (তৌফিকুল ইসলাম) — React, Next.js, Node.js, MongoDB, and modern DevOps tools.",
+    url: `${BASE}/navLinks/skills`,
     images: [
       {
-        url: "https://towfiq-mern-stack-developer.vercel.app/og-image.png",
+        url: `${BASE}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Skills — Towfiqul Islam",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Skills & Technologies | Towfiqul Islam",
+    title: "Skills & Technologies | Towfiqul Islam | তৌফিকুল ইসলাম",
     description:
       "Full stack technical skills of Towfiqul Islam — React, Next.js, Node.js, MongoDB, and modern DevOps tools.",
-    images: ["https://towfiq-mern-stack-developer.vercel.app/og-image.png"],
+    images: [`${BASE}/og-image.png`],
   },
 };
-
-const BASE = "https://towfiq-mern-stack-developer.vercel.app";
 
 const skillsJsonLd = {
   "@context": "https://schema.org",
@@ -57,8 +57,9 @@ const skillsJsonLd = {
     },
     {
       "@type": "ItemList",
-      name: "Technical Skills of Towfiqul Islam",
-      description: "Programming languages, frameworks, and tools used by Towfiqul Islam.",
+      name: "Technical Skills of Towfiqul Islam (তৌফিকুল ইসলাম)",
+      description:
+        "Programming languages, frameworks, and tools used by Towfiqul Islam — Full Stack MERN Developer from Bangladesh.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "React — 95%" },
         { "@type": "ListItem", position: 2, name: "Next.js — 90%" },
@@ -74,9 +75,6 @@ const skillsJsonLd = {
     },
   ],
 };
-
-
-import React from 'react';
 
 const SkillsPage = () => {
   return (

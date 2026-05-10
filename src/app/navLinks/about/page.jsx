@@ -8,14 +8,22 @@ import { IoGitCommit } from "react-icons/io5";
 import { MdBiotech } from "react-icons/md";
 
 export const metadata = {
-  title: "About Towfiqul Islam | Full Stack MERN Developer",
+  title: "About Towfiqul Islam | তৌফিকুল ইসলাম | Full Stack MERN Developer",
   description:
-    "Learn about Towfiqul Islam — a Full Stack MERN Developer from Bangladesh with expertise in React, Next.js, Node.js, MongoDB. 1+ years experience, 20+ projects completed.",
+    "Learn about Towfiqul Islam (তৌফিকুল ইসলাম) — a Full Stack MERN Developer from Dhaka, Bangladesh with expertise in React, Next.js, Node.js, MongoDB. 1+ years experience, 20+ projects completed.",
+  keywords: [
+    "Towfiqul Islam",
+    "তৌফিকুল ইসলাম",
+    "About Towfiqul Islam",
+    "Towfiqul Islam developer Bangladesh",
+    "MERN Stack Developer Dhaka",
+    "Full Stack Developer Bangladesh",
+  ],
   alternates: { canonical: "/navLinks/about" },
   openGraph: {
-    title: "About Towfiqul Islam | Full Stack MERN Developer",
+    title: "About Towfiqul Islam | তৌফিকুল ইসলাম | Full Stack MERN Developer",
     description:
-      "Towfiqul Islam is a passionate Full Stack Developer from Bangladesh specializing in MERN Stack, React, and Next.js.",
+      "Towfiqul Islam (তৌফিকুল ইসলাম) is a passionate Full Stack Developer from Dhaka, Bangladesh specializing in MERN Stack, React, and Next.js.",
     url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/about",
     images: [
       {
@@ -32,33 +40,61 @@ const BASE = "https://towfiq-mern-stack-developer.vercel.app";
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "@id": `${BASE}/navLinks/about/#aboutpage`,
-  url: `${BASE}/navLinks/about`,
-  name: "About Towfiqul Islam",
-  description:
-    "About page of Towfiqul Islam, a Full Stack MERN Stack Developer from Bangladesh.",
-  mainEntity: {
-    "@type": "Person",
-    "@id": `${BASE}/#person`,
-    name: "Towfiqul Islam",
-    jobTitle: "Full Stack MERN Developer",
-    description:
-      "Towfiqul Islam is a Full Stack Web Developer from Dhaka, Bangladesh, specializing in React, Next.js, Node.js, and MongoDB.",
-    image: `${BASE}/og-image.png`,
-    url: BASE,
-    sameAs: [
-      "https://github.com/towfiq-dev",
-      "https://www.linkedin.com/in/towfiqul-islam1",
-    ],
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-      { "@type": "ListItem", position: 2, name: "About", item: `${BASE}/navLinks/about` },
-    ],
-  },
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${BASE}/navLinks/about/#aboutpage`,
+      url: `${BASE}/navLinks/about`,
+      name: "About Towfiqul Islam | তৌফিকুল ইসলাম",
+      description:
+        "About page of Towfiqul Islam (তৌফিকুল ইসলাম), a Full Stack MERN Stack Developer from Dhaka, Bangladesh.",
+      inLanguage: ["en-US", "bn-BD"],
+      mainEntity: {
+        "@type": "Person",
+        "@id": `${BASE}/#person`,
+        name: "Towfiqul Islam",
+        alternateName: ["তৌফিকুল ইসলাম", "Towfiq Islam", "তৌফিক ইসলাম"],
+        jobTitle: "Full Stack MERN Developer",
+        description:
+          "Towfiqul Islam (তৌফিকুল ইসলাম) is a Full Stack Web Developer from Dhaka, Bangladesh, specializing in React, Next.js, Node.js, and MongoDB. He has completed 20+ projects and has 500+ GitHub contributions.",
+        image: {
+          "@type": "ImageObject",
+          url: `${BASE}/og-image.png`,
+          width: 1200,
+          height: 630,
+        },
+        url: BASE,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Dhaka",
+          addressCountry: "BD",
+        },
+        sameAs: [
+          "https://github.com/towfiq-dev",
+          "https://www.linkedin.com/in/towfiqul-islam1",
+          "https://x.com/towfiqul6185",
+          "https://www.facebook.com/towfiqul6185",
+        ],
+        knowsAbout: [
+          "React", "Next.js", "Node.js", "MongoDB", "Express.js",
+          "JavaScript", "TypeScript", "Tailwind CSS", "Redux", "Docker",
+        ],
+        alumniOf: [
+          {
+            "@type": "EducationalOrganization",
+            name: "National University Bangladesh",
+          },
+        ],
+      },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+          { "@type": "ListItem", position: 2, name: "About", item: `${BASE}/navLinks/about` },
+        ],
+      },
+    },
+  ],
 };
 
 const expertise = [
@@ -90,7 +126,7 @@ const AboutMe = () => {
       />
       <section
         className="bg-black text-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        aria-label="About Towfiqul Islam"
+        aria-label="About Towfiqul Islam — Full Stack MERN Developer from Bangladesh"
       >
         <div className="max-w-7xl mx-auto pt-24 sm:pt-28">
 
@@ -121,7 +157,7 @@ const AboutMe = () => {
                   width={600}
                   height={700}
                   src={profileImageUrl}
-                  alt="Towfiqul Islam — Full Stack MERN Developer from Bangladesh"
+                  alt="Towfiqul Islam (তৌফিকুল ইসলাম) — Full Stack MERN Developer from Dhaka, Bangladesh"
                   className="w-full h-auto object-cover group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>

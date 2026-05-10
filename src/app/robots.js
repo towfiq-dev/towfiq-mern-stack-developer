@@ -7,6 +7,16 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/api/", "/_next/", "/static/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: "Googlebot-Image",
+        allow: "/",
       },
     ],
     sitemap: "https://towfiq-mern-stack-developer.vercel.app/sitemap.xml",

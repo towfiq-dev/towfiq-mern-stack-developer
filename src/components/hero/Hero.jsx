@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       className="bg-[#050505] text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 lg:pt-10 lg:pb-0"
-      aria-label="Hero section — Towfiqul Islam, Full Stack MERN Developer"
+      aria-label="Towfiqul Islam (তৌফিকুল ইসলাম) — Full Stack MERN Developer from Bangladesh"
     >
       <div className="max-w-7xl pt-20 mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
@@ -28,8 +28,10 @@ export default function Hero() {
 
           <p className="text-lg md:text-xl text-neutral-400">Hello, I&apos;m</p>
 
+          {/* h1 with both English and Bengali name for bilingual SEO */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
             Towfiqul Islam
+            <span className="sr-only"> — তৌফিকুল ইসলাম — Full Stack MERN Stack Developer from Bangladesh</span>
           </h1>
 
           {/* Typing Animation — client component */}
@@ -83,7 +85,7 @@ export default function Hero() {
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-neutral-800 bg-neutral-900 overflow-hidden shadow-2xl z-10">
             <Image
               src={profileImageUrl}
-              alt="Towfiqul Islam — Full Stack MERN Developer, Portfolio Profile Picture"
+              alt="Towfiqul Islam (তৌফিকুল ইসলাম) — Full Stack MERN Developer from Dhaka, Bangladesh. Portfolio profile picture."
               fill
               sizes="(max-width: 640px) 224px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
               style={{ objectFit: "cover" }}

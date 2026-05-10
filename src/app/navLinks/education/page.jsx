@@ -1,18 +1,26 @@
 import Education from "@/components/education/Education";
 
+const BASE = "https://towfiq-mern-stack-developer.vercel.app";
+
 export const metadata = {
-  title: "Education | Towfiqul Islam",
+  title: "Education | Towfiqul Islam | তৌফিকুল ইসলাম",
   description:
-    "Academic background of Towfiqul Islam — SSC (GPA 4.22), HSC (GPA 4.17), and B.Sc in Social Work (Running). Full Stack MERN Developer from Bangladesh.",
+    "Academic background of Towfiqul Islam (তৌফিকুল ইসলাম) — SSC (GPA 4.22), HSC (GPA 4.17), and B.Sc in Social Work (Running). Full Stack MERN Developer from Bangladesh.",
+  keywords: [
+    "Towfiqul Islam education",
+    "তৌফিকুল ইসলাম শিক্ষা",
+    "Towfiqul Islam academic",
+    "Towfiqul Islam Bangladesh developer",
+  ],
   alternates: { canonical: "/navLinks/education" },
   openGraph: {
-    title: "Education | Towfiqul Islam",
+    title: "Education | Towfiqul Islam | তৌফিকুল ইসলাম",
     description:
-      "Academic qualifications of Towfiqul Islam — MERN Stack Developer from Bangladesh.",
-    url: "https://towfiq-mern-stack-developer.vercel.app/navLinks/education",
+      "Academic qualifications of Towfiqul Islam (তৌফিকুল ইসলাম) — MERN Stack Developer from Bangladesh.",
+    url: `${BASE}/navLinks/education`,
     images: [
       {
-        url: "https://towfiq-mern-stack-developer.vercel.app/og-image.png",
+        url: `${BASE}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Education — Towfiqul Islam",
@@ -21,14 +29,46 @@ export const metadata = {
   },
 };
 
-const BASE = "https://towfiq-mern-stack-developer.vercel.app";
-
 const educationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-    { "@type": "ListItem", position: 2, name: "Education", item: `${BASE}/navLinks/education` },
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+        { "@type": "ListItem", position: 2, name: "Education", item: `${BASE}/navLinks/education` },
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": `${BASE}/#person`,
+      name: "Towfiqul Islam",
+      alternateName: ["তৌফিকুল ইসলাম", "Towfiq Islam"],
+      alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "National University Bangladesh",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "BD",
+          },
+        },
+      ],
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "SSC",
+          description: "Secondary School Certificate — GPA 4.22",
+          credentialCategory: "degree",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "HSC",
+          description: "Higher Secondary Certificate — GPA 4.17",
+          credentialCategory: "degree",
+        },
+      ],
+    },
   ],
 };
 
