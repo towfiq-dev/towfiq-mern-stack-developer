@@ -195,7 +195,7 @@ export default function EducationDetails({ edu, onClose }) {
           <div className="flex justify-center mb-5">
             <a
               href={
-                edu.institution === "Seraj Nagar M.A. Pilot High School, Narsingdi"? "https://drive.google.com/drive/folders/1oRsCMwDdhZ9l02gboad_GBnr--wCuSvm" : edu.institution === "Raipura Govt. College, Narsingdi"? "https://drive.google.com/drive/folders/1s36njuUr0N-z_aeRl2oCVfmcmTyhj_gq" : ''
+                edu.institution === "Seraj Nagar M.A. Pilot High School, Narsingdi"? "https://drive.google.com/drive/folders/1wyN9MDq6M_Sv_-lrdo-e_7_hd91iWljy" : edu.institution === "Raipura Govt. College, Narsingdi"? "https://drive.google.com/drive/folders/1TTArMIwnCM4NOAYsaLhFdoyyZ_rkkagF" : ''
               }
               target="_blank"
               rel="noreferrer"

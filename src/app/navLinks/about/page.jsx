@@ -224,7 +224,7 @@ const AboutMe = () => {
                   Let&apos;s Work Together <FaArrowRight size={12} />
                 </Link>
                 <a
-                  href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
+                  href="https://drive.google.com/file/d/1gejvawxI8BydF27qMKH2yAsg6omt9ghZ/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-3.5 bg-[#111] border border-gray-800 rounded-full font-bold text-sm hover:bg-gray-800 transition-all"

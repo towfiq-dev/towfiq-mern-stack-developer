@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1gejvawxI8BydF27qMKH2yAsg6omt9ghZ/view"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download Towfiqul Islam's Resume"

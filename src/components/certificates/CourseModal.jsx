@@ -138,7 +138,7 @@ export default function CourseModal({ course, onClose }) {
         {/* Show Credential Button */}
         <Link 
         href={course.liveLink || 
-        "https://drive.google.com/drive/folders/1ZRzStK6B1wshZ7SBTiFBIFlMWV2_93FF"} 
+        "https://drive.google.com/drive/folders/14TzZvOh9ZeV6annRQvncrJCTOwCh2h5t"} 
         target="_blank" 
         className="flex justify-center mb-5">
           <button className="bg-gradient-to-r from-blue-500 cursor-pointer to-purple-500 text-white px-6 py-2 rounded-full flex items-center justify-center gap-2 font-medium hover:from-blue-600 hover:to-purple-600 transition-all">

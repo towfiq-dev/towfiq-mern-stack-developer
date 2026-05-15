@@ -62,7 +62,7 @@ export default function Hero() {
                 </span>
               </Link>
               <a
-                href="https://drive.google.com/file/d/1VcFCmG6LmMKLE0Rk0BdOaEChltObzPNX/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1gejvawxI8BydF27qMKH2yAsg6omt9ghZ/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group py-3 px-5 rounded-full bg-neutral-900 border border-neutral-700 hover:border-neutral-500 flex items-center gap-2 transition-all duration-300"
