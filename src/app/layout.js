@@ -149,7 +149,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      data-theme="dark"
+      //data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
