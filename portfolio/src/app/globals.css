@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ===========================
+   SCROLL SMOOTH
+   =========================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   CUSTOM SCROLLBAR
+   =========================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ===========================
+   FLOAT ANIMATION
+   =========================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ===========================
+   TYPEWRITER
+   =========================== */
+.typewriter-container {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.3em;
+}
+
+/* ===========================
+   RESPONSIVE OVERFLOW FIX
+   Prevents horizontal scroll on mobile desktop-mode
+   =========================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ===========================
+   HERO SECTION — no extra top gap
+   =========================== */
+@media (max-width: 1024px) {
+  section[class*="min-h-screen"] {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+}

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true,
+  //reactCompiler: true,
 
   // Canonical domain — prevents duplicate content from www vs non-www
   async headers() {

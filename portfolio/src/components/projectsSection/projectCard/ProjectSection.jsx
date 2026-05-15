@@ -1,0 +1,101 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { allProjects } from "@/components/allAPI/projectApi/ProjectApi";
+
+// Server component — Google can now fully crawl all project titles, descriptions, tags
+const FeaturedProjects = () => {
+  return (
+    <section
+      className="bg-black text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
+      aria-label="Featured Projects by Towfiqul Islam"
+    >
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <span className="text-cyan-400 border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
+            Portfolio
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4">
+            Featured <span className="text-blue-500">Projects</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+            A selection of my recent work — built with modern tools and best practices.
+          </p>
+        </div>
+
+        {/* Projects Grid — fully server-rendered, Google reads all content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {allProjects.slice(0, 3).map((project) => (
+            <article
+              key={project.id}
+              className="bg-[#0f1115] border border-gray-800 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-gray-700 group hover:-translate-y-2"
+            >
+              {/* Image */}
+              <div className="relative h-48 sm:h-52 w-full bg-gray-900 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} — project by Towfiqul Islam`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                  className="opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                <span className="text-xs font-medium text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-lg w-fit mb-3">
+                  {project.category}
+                </span>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 line-clamp-2 group-hover:text-blue-400 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 text-sm mb-5 flex-grow line-clamp-2">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {project.tags.slice(0, 4).map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] bg-gray-800 text-gray-300 px-2 py-1 rounded border border-gray-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View live demo of ${project.title}`}
+                  className="flex items-center gap-2 text-cyan-400 border border-cyan-400/20 w-fit px-4 py-2 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 text-sm font-medium"
+                >
+                  <ExternalLink size={15} />
+                  Live Demo
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/navLinks/projects"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 active:scale-95"
+          >
+            View All Projects <ArrowRight size={18} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeaturedProjects;
